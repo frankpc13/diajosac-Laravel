@@ -1,0 +1,145 @@
+.img-fluid{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.text-carousel {
+    font-size: 80px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+.text-parrafo {
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+#band{
+    padding: 20px;
+    width: 100%;
+    background: #138496;
+}
+#band2{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    background: #0c5460;
+}
+#band3{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+    padding-left: 40px;
+    width: 100%;
+    background: #005cbf;
+}
+.icons{
+    background: #ffffff;
+    width: 50%;
+}
+.rounded-circle{
+    background: white;
+    width: 50%;
+
+}
+footer{
+    padding: 20px;
+    color:white;
+    background: #1b1e21;
+    font-size: large;
+
+}
+.text-band3{
+    color: white;
+}
+
+.normas{
+    background: #0c5460;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.col-sm{
+    margin: 10px;
+}
+.xpadding{
+    text-align: center;
+}
+.btn-bot{
+    position:absolute;
+    margin-left:-50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    left:50%;
+    width:100px;
+    bottom:0px;
+}
+
+.marcas{
+    background: indigo;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.card-d{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.titlecard{
+    margin: 10px;
+}
+#searchbar{
+    margin-top: 57px;
+    margin-bottom: 20px;
+}
+.extended{
+    margin-bottom: 20px;
+}
+.productos{
+    background: steelblue;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.lista-tipo{
+    margin-bottom: 20px;
+}
+.marca-title{
+    color: black;
+}
+.lista-tabla{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.dataTables_filter input {
+    width: 200px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+
+}
+.login-bg{
+    color: white;
+    background: #0c5460;
+    padding: 50px;
+}
+.login-d{
+    margin-top: 40px;
+}
+.help-box{
+    border: 2px solid #0c5460;
+    border-radius: 5px;
+}
+body {
+    min-height: 100vh;
+}
+.x-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: #1b1e21;
+    font-size: large;
+}
+.text-section{
+    font-size: x-large;
+}

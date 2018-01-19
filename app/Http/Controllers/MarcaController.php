@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Marca;
+use Illuminate\Http\Request;
+
+class MarcaController extends Controller
+{
+    //
+
+    public function index(){
+        $marca=Marca::all();
+
+        return view('marcas',['marcas'=>$marca]);
+    }
+}
