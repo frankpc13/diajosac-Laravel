@@ -9,25 +9,25 @@
     <title>Marcas - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
-    <link href="vendors/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/vendors/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.css" rel="stylesheet">
+    <link href="/css/creative.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="vendor/jquery/jquery-ui.css">
-    <link rel="stylesheet" href="vendor/jquery/jquery-ui.theme.css">
-    <link rel="stylesheet" href="vendor/jquery/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/vendors/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="/vendors/jquery/jquery-ui.theme.css">
+    <link rel="stylesheet" href="/vendors/jquery/jquery-ui.structure.css">
 
-    <script src="vendors/jquery/jquery.min.js"></script>
-    <script src="vendors/jquery/jquery-ui.js"></script>
+    <script src="/vendors/jquery/jquery.min.js"></script>
+    <script src="/vendors/jquery/jquery-ui.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
@@ -62,9 +62,9 @@
                         Catálogo
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="marcas.html">Marcas</a>
-                        <a class="dropdown-item" href="productos.html">Productos</a>
-                        <a class="dropdown-item" href="normas.html">Normativas sobre EEP</a>
+                        <a class="dropdown-item" href="/marcas">Marcas</a>
+                        <a class="dropdown-item" href="/productos">Productos</a>
+                        <a class="dropdown-item" href="/normas">Normativas sobre EEP</a>
                     </div>
                 </li>
             </ul>
@@ -143,25 +143,16 @@
         </div>
     </form>
 </div>
-
-<label for="pacman">Select a programming language: </label>
-<input id="pacman">
-
-<script>
-    $( "#pacman" ).autocomplete({
-        source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]
-    });
-</script>
 <!-- Bootstrap core JavaScript -->
-<script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="vendors/jquery-easing/jquery.easing.min.js"></script>
-<script src="vendors/scrollreveal/scrollreveal.min.js"></script>
-<script src="vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/vendors/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendors/scrollreveal/scrollreveal.min.js"></script>
+<script src="/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="js/creative.js"></script>
+<script src="/js/creative.js"></script>
 
 
 <footer class="text-center">DIAJO S.A.C. 2018</footer>

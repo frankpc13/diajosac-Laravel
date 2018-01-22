@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\File;
 
 class ProductoController extends Controller
 {
-    //
+    //carga de pagina de inicio
     public function index(){
         $producto=Producto::orderBy('nombre')->paginate(8);
 
@@ -26,6 +26,17 @@ class ProductoController extends Controller
         return view('productos',compact('tipo','producto','resultados','total'));
     }
 
+    //implementación de la busqueda para el buscador de productos
+    public function buscarProducto($nombre){
+        $producto=Producto::where('nombre','like',"%{{$nombre}}%")->get();
+
+        $tipo=Tipo::all();
+        $resultados=Producto::orderBy('nombre')->paginate(8)->get();
+        $total=Producto::all()->count();
+        return view('productos',compact('tipo','producto','resultados','total'));
+    }
+
+    //metodo para agregar nuevo producto
     public function nuevoProducto(Request $request){
         $nuevo = new Producto();
         $nuevo->nombre = $request->get('nombre_producto');
@@ -55,6 +66,7 @@ class ProductoController extends Controller
         //}//
     }
 
+    //metodo para obtener los datos de un producto en especifico
     public function detalleProducto($id){
         $producto=Producto::find($id);
         $marca=Marca::all();
@@ -65,6 +77,7 @@ class ProductoController extends Controller
 
     }
 
+    //metodo para poder actualizar los datos de un producto
     public function actualizarProducto(Request $request,$id){
        /* if(!$request->has('nombre_producto'||!$request->has('codigo_producto')||!$request->has('tipo_producto')
             ||!$request->has('marca_producto'))){

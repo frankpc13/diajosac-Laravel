@@ -88,7 +88,7 @@
                         de conformidad con esta norma deben igualar o mejorar
                         las especificaciones de Tipo y Clase especificadas en la norma.
                     </div><br>
-                    <a href="#" class="btn btn-primary btn-bot">Leer mas</a>
+                    <a href="/normas/cascos_proteccion" class="btn btn-primary btn-bot">Leer mas</a>
                 </div>
             </div>
         </div>
@@ -101,7 +101,7 @@
                         tipos de frecuencias. Existen diferentes términos básico dentro
                         de la normativa que revisaremos.
                     </div><br>
-                    <a href="#" class="btn btn-primary btn-bot">Leer mas</a>
+                    <a href="/normas/proteccion_auditiva" class="btn btn-primary btn-bot">Leer mas</a>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
                         Del estándar se despliegan los lineamientos de la
                         normativa 42 cfr 84 que define ...
                     </div><br>
-                    <a href="#" class="btn btn-primary btn-bot">Leer mas</a>
+                    <a href="/normas/proteccion_respiratoria" class="btn btn-primary btn-bot">Leer mas</a>
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@
                         incluye, más no está limitado a, durabilidad, limpieza,
                         comodidad, ajuste seguro, lentes de prescripción ...
                     </div><br>
-                    <a href="#" class="btn btn-primary btn-bot">Leer mas</a>
+                    <a href="/normas/proteccion_visual" class="btn btn-primary btn-bot">Leer mas</a>
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@
                         y físicos ocasionados por abrasión, corte por cuchilla,
                         rasgado y perforación debiendo cumplir con los requisitos.
                     </div><br>
-                    <a href="#" class="btn btn-primary btn-bot">Leer mas</a>
+                    <a href="/normas/guantes_proteccion" class="btn btn-primary btn-bot">Leer mas</a>
                 </div>
             </div>
         </div>
@@ -159,7 +159,7 @@
                         y el alargamiento del tejido, no tejido y las
                         telas afelpadas y textiles.
                     </div><br>
-                    <a href="#" class="btn btn-primary btn-bot">Leer mas</a>
+                    <a href="/normas/trajes_proteccion" class="btn btn-primary btn-bot">Leer mas</a>
                 </div>
             </div>
         </div>

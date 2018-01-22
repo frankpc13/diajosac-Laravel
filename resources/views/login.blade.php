@@ -25,7 +25,7 @@
 </head>
 <body>
 <header class="text-center login-bg">
-    <h3>Super Login para CRUD</h3>
+    <h3>Administración</h3>
 </header>
 <div class="container-fluid login-d">
 
