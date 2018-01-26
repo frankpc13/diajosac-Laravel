@@ -14,15 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/marcas',function (){
-    return view('marcas');
-});
+Route::get('/marcas','MarcaController@index');
 Route::get('/normas',function(){
     return view('normas');
 });
-Route::get('/productos',function (){
-    return view('productos');
-});
+Route::get('/productos','ProductoController@index');
 Route::get('/normas/cascos_proteccion',function (){
    return view('cascos_de_proteccion');
 });
@@ -42,23 +38,31 @@ Route::get('/normas/trajes_proteccion',function (){
     return view('traje');
 });
 //admin mode
-Route::get('/nuevo-producto','ProductoController@crearProducto')->middleware('auth');
-Route::get('/lista','ProductoController@listaProducto')->middleware('auth');
-Route::get('/editar-producto/{id}','ProductoController@detalleProducto')->middleware('auth');
+Route::get('/admin/nuevo-producto','ProductoController@crearProducto')->middleware('auth');
+Route::get('/admin/lista','ProductoController@listaProducto')->middleware('auth');
+Route::get('/admin/editar-producto/{id}','ProductoController@detalleProducto')->middleware('auth');
 //user-mode
-Route::get('/login',function (){
+Route::get('/admin/login',function (){
    return view('login');
 });
 //user-mode
-Route::get('/logout','ApiController@cerrarSesion');
-Route::get('/productos/{id}','ProductoController@productosPorTipo');
-Route::get('/productos/marcas/{id}','ProductoController@productosPorMarca');
-Route::post('/sesion','ApiController@login');
-
-Route::Resource('/marcas','MarcaController');
-Route::Resource('/productos','ProductoController');
+Route::get('/productos/detalle/{nombre}','ProductoController@detalleProductoLista');
+Route::get('/productos/buscar/{nombre}','ProductoController@buscarProducto');
+Route::get('/productos/tipos/{nombre}','ProductoController@productosPorTipo');
+Route::get('/productos/marcas/{nombre}','ProductoController@productosPorMarca');
+Route::post('/productos/buscar/{nombre}','ProductoController@buscarProducto');
 
 //admin mode
-Route::post('/editar/{id}','ProductoController@actualizarProducto')->middleware('auth');
-Route::post('/create','ProductoController@nuevoProducto')->middleware('auth');
-Route::post('/borrar-producto/{id}','ProductoController@borrarProducto')->middleware('auth');
+Route::post('/admin/sesion','ApiController@login');
+Route::post('/admin/editar/{id}','ProductoController@actualizarProducto')->middleware('auth');
+Route::post('/admin/create','ProductoController@nuevoProducto')->middleware('auth');
+Route::get('/admin/borrar-producto/{id}','ProductoController@borrarProducto')->middleware('auth');
+Route::get('/admin/logout','ApiController@cerrarSesion');
+
+//test de mail
+Route::post('enviar-correo',function (\Illuminate\Http\Request $request,Illuminate\Mail\Mailer $mailer){
+    $mailer->to('paul.frankpc@gmail.com')
+        ->send(new \App\Mail\Consulta($request->input('email_usuario'),$request->input('nombre_usuario'),
+            $request->input('apellido_usuario'),$request->input('telefono_usuario'),$request->input('consulta_usuario')));
+    return redirect()->back();
+});

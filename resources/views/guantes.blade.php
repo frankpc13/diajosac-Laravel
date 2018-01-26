@@ -70,69 +70,131 @@
         </div>
     </div>
 </nav>
-<header class="container-fluid  text-white text-center productos"><h1 class="text-uppercase">Normativa sobre los guantes de protección</h1></header>
+<header class="container-fluid  text-white text-center productos">
+    <h1 class="text-uppercase">Normativa sobre los guantes de protección</h1>
+</header>
 <div class="container-fluid p-5">
-    <img class="img-thumbnail" src="/imagen-guante/FDA.png" height="100" width="100">
-    <p><h3>FDA</h3>
-    Cumple con los requirimientos de la "FDA" pra contacto con alimentos</p>
+    <div class="row">
+        <div class="col-lg-1">
+            <img class="img-thumbnail" src="/imagen-guante/FDA.png" height="100" width="100">
+        </div>
+        <div class="col-lg">
+            <p><h3>FDA</h3>
+            Cumple con los requirimientos de la "FDA" para el contacto con alimentos</p>
+        </div>
+    </div>
     <br>
-    <img class="img-thumbnail" src="/imagen-guante/CE.png" width="100" height="100">
-    <p><h3>EN 420</h3>
-    El estándar "EN 420" describe los requerimientos generales, tamaños y marcados obligatorios de los guantes de protección.
-    Establecen las exigencias esenciales para los guantes de protección en materia de:</p>
-    <li class="ml-3">Identificación del fabricante y de la marca del producto</li>
-    <li class="ml-3">Composición del guante, embalaje, almacenado y limpieza</li>
-    <li class="ml-3">Inocuidad de los materiales y componentes</li>
-    <li class="ml-3">Ergonomia</li>
-    <li class="ml-3">Tallas y tamaños</li>
+    <div class="row">
+        <div class="col-lg-1">
+            <img class="img-thumbnail" src="/imagen-guante/CE.png" width="100" height="100">
+        </div>
+        <div class="col-lg">
+            <p><h3>EN 420</h3>
+            El estándar "EN 420" describe los requerimientos generales, tamaños y marcados obligatorios de los guantes de
+            protección.<br>
+            Establecen las exigencias esenciales para los guantes de protección en materia de:</p>
+            <li class="ml-3">Identificación del fabricante y de la marca del producto</li>
+            <li class="ml-3">Composición del guante, embalaje, almacenado y limpieza</li>
+            <li class="ml-3">Inocuidad de los materiales y componentes</li>
+            <li class="ml-3">Ergonomia</li>
+            <li class="ml-3">Tallas y tamaños</li>
+        </div>
+    </div>
     <br>
-    <img class="img-thumbnail" src="/imagen-guante/protec.png" height="100" width="100">
-    <p><h3>EN 388</h3>
-    La normativa "EN 388" establece los criterios para guantes de protección destinados a proteger de riesgos mecánicos y físicos ocaionados por abrasión, corte por cuchilla, rasgado y perforación, debiendo cumplir
-    con los requerimientos generales establecidos en la norma "EN 420"<br><br>
+    <div class="row">
+        <div class="col-lg-1">
+            <img class="img-thumbnail" src="/imagen-guante/protec.png" height="100" width="100">
 
-    El pictograma de riegos mecánicos viene acompañado por un código de 4 dígitos:<br>
-    <br>
-    A.- Resistencia a la abrasión (de 0 a 4): número de ciclos de abrasión necesario para desgastar completamente una muestra del guante.<br>
-    B.- Resistencia al corte por cuchilla (de 0 a 5): número de ciclos necesarios para cortar completamente una muestra del guante a una velocidad constante.<br>
-    C.- Resistencia al desgarro (de 0 a 4): fuerza necesaria para desgarrar una muestra del guante.<br>
-    D.- Resistencia a la perforación (de 0 a 4): fuerza necesaria para perforar una muestra del guante.<br>
-    </p>
-    <br>
-    <img class="img-thumbnail" src="/imagen-guante/protec.png" width="100" height="100">
-    <p><h3>EN 374</h3>
-    El estándar "EN 374" especifica la capacidad de protección de un guante contra químicos y/o microorganismos. Existen 2 tipos de mediciones importantes dentro de este estándar.</p><br>
-    <p><h5>Penetración:</h5> se define como el avance de productos químicos y/o microorganismos a través de materiales porosos, costuras, perforaciones y otros desperfectos del material de un guante de protección de un nivel molecular
-    <br>
-    <br>
-    -El pictograma resistencia a químicos debe ir acompañado de un código de 3 dígitos como mínimo que identifica las letras de los productos químicos (lista de 12 productos estándar) para los que se haya obtenido un tiempo de paso de al menos 30 minutos</p>
-    <br><br>
-    <img class="img-thumbnail" src="/imagen-guante/lala.png" height="100" width="100">
-    <p><h5>Permeabilidad:</h5> se define como el tiempo necesario para que el líquido peligroso se filtre hasta entrar en contacto con la piel. Cada producto químico testeado se clasifica en términos de tiempo de paso (Nivel de rendimiento de 0 a 6)
-    <br><br>
-    -Este pictograma identifica baja resistencia a productos químicos y se utilizará en aquellos guantes que no alcancen un tiempo de paso de al menos 30 minutos contra al menos 3 productos químicos de la lista definida que cumplan con la prueba de permeabilidad
-    </p>
-    <br><br>
-    <img class="img-thumbnail" src="/imagen-guante/contam.png" width="100" height="100">
-    <p>-El pictograma microorganismos se utilizará cuando el guante cumpla con al menos un nivel de protección 2 para la prueba de permeabilidad.
-    </p><br><br>
+        </div>
+        <div class="col-lg">
+            <p><h3>EN 388</h3>
+            La normativa "EN 388" establece los criterios para guantes de protección destinados a proteger de riesgos
+            mecánicos y físicos ocaionados por abrasión, corte por cuchilla, rasgado y perforación, debiendo cumplir
+            con los requerimientos generales establecidos en la norma "EN 420"<br><br>
 
-    <img src="/imagen-guante/fire.png" class="img-thumbnail" height="100" width="100">
-    <p><h5>EN 407</h5>
-    El estándar "EN 407" establece los criterios para guantes de protección contra el calor y/o el fuego. La naturaleza y el grado de protección se especifican mediante un pictograma y una serie de 6 niveles de protección que corresponden a diferentes propiedades a analizar.
-    <br><br>
-    A.-Resitencia a la inflamabilidad
+            El pictograma de riegos mecánicos viene acompañado por un código de 4 dígitos:<br>
+            A.- Resistencia a la abrasión (de 0 a 4): número de ciclos de abrasión necesario para desgastar completamente una
+            muestra del guante.<br>
+            B.- Resistencia al corte por cuchilla (de 0 a 5): número de ciclos necesarios para cortar completamente una muestra
+            del guante a una velocidad constante.<br>
+            C.- Resistencia al desgarro (de 0 a 4): fuerza necesaria para desgarrar una muestra del guante.<br>
+            D.- Resistencia a la perforación (de 0 a 4): fuerza necesaria para perforar una muestra del guante.<br>
+        </div>
+    </div>
     <br>
-    B.-Resistencia de calor por contacto
+    <div class="row">
+        <div class="col-lg-1">
+            <img class="img-thumbnail" src="/imagen-guante/quimo.png" width="100" height="100">
+
+        </div>
+        <div class="col-lg">
+            <p><h3>EN 374</h3>
+            El estándar "EN 374" especifica la capacidad de protección de un guante contra químicos y/o microorganismos.
+            Existen 2 tipos de mediciones importantes dentro de este estándar.</p><br>
+            <p><h5>Penetración:</h5> se define como el avance de productos químicos y/o microorganismos a través de materiales
+            porosos, costuras, perforaciones y otros desperfectos del material de un guante de protección de un nivel molecular
+            <br>
+            <br>
+            -El pictograma resistencia a químicos debe ir acompañado de un código de 3 dígitos como mínimo que
+            identifica las letras de los productos químicos (lista de 12 productos estándar) para los que se haya obtenido
+            un tiempo de paso de al menos 30 minutos</p>
+        </div>
+    </div>
     <br>
-    C.-Resistencia al calor por convección
+    <div class="row">
+        <div class="col-lg-1">
+            <img class="img-thumbnail" src="/imagen-guante/lala.png" height="100" width="100">
+
+        </div>
+        <div class="col-lg">
+            <p><h5>Permeabilidad:</h5> se define como el tiempo necesario para que el líquido peligroso se filtre hasta
+            entrar en contacto con la piel. Cada producto químico testeado se clasifica en términos de tiempo de paso
+            (Nivel de rendimiento de 0 a 6)
+            <br><br>
+            -Este pictograma identifica baja resistencia a productos químicos y se utilizará en aquellos guantes que no
+            alcancen un tiempo de paso de al menos 30 minutos contra al menos 3 productos químicos de la lista definida
+            que cumplan con la prueba de permeabilidad
+            </p>
+        </div>
+    </div>
     <br>
-    D.-Resistencia al calor por radiación
+    <div class="row">
+        <div class="col-lg-1">
+            <img class="img-thumbnail" src="/imagen-guante/contam.png" width="100" height="100">
+
+        </div>
+        <div class="col-lg">
+            <p>-El pictograma microorganismos se utilizará cuando el guante cumpla con al menos un nivel de protección 2 para
+                la prueba de permeabilidad.
+        </div>
+    </div>
     <br>
-    E.-Resistencia a pequeñas salpicaduras de metal fundido
-    <br>
-    F.-Resistencia a grandes cantidades de metal fundido
-    </p>
+    <div class="row">
+        <div class="col-lg-1">
+            <img src="/imagen-guante/fire.png" class="img-thumbnail" height="100" width="100">
+
+        </div>
+        <div class="col-lg">
+            <p><h5>EN 407</h5>
+            El estándar "EN 407" establece los criterios para guantes de protección contra el calor y/o el fuego.
+            La naturaleza y el grado de protección se especifican mediante un pictograma y una serie de 6 niveles de protección
+            que corresponden a diferentes propiedades a analizar.
+            <br><br>
+            A.- Resitencia a la inflamabilidad
+            <br>
+            B.- Resistencia de calor por contacto
+            <br>
+            C.- Resistencia al calor por convección
+            <br>
+            D.- Resistencia al calor por radiación
+            <br>
+            E.- Resistencia a pequeñas salpicaduras de metal fundido
+            <br>
+            F.- Resistencia a grandes cantidades de metal fundido
+            </p>
+        </div>
+    </div>
+
 </div>
 
 <footer class="text-center">DIAJO SAC 2018</footer>

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio  ">
 
-    <title>Normativa de protección auditiva - DIAJO SAC</title>
+    <title>Marcas - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,14 +22,8 @@
     <!-- Custom styles for this template -->
     <link href="/css/creative.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="/vendors/jquery/jquery-ui.css">
-    <link rel="stylesheet" href="/vendors/jquery/jquery-ui.theme.css">
-    <link rel="stylesheet" href="/vendors/jquery/jquery-ui.structure.css">
 
-    <script src="/vendors/jquery/jquery.min.js"></script>
-    <script src="/vendors/jquery/jquery-ui.js"></script>
 </head>
-<body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -70,31 +64,35 @@
         </div>
     </div>
 </nav>
-<header class="container-fluid  text-white text-center productos">
-    <h1 class="text-uppercase">Normativa sobre la protección auditiva</h1></header>
-<div class="container-fluid p-5">
-    <p><h3>ANSI S3.19-1974</h3>
-    La norma "ANSI S3.19-1974" mide y determina el nuvel de reducción de ruido (NBR) de un protector auditivo expuesto a
-    diferentes tipos de frecuencias. Existen diferentes términos básicos dentro de la normativa que revisaremos a continuación:
-    </p>
-    <p>Ruido
-    <li class="ml-5"> Sonido no deseado por el receptor que le molesta para escuchar el sonido que necesita</li></p>
-    <p>Sonido
-    <li class="ml-5"> Cualquier fenómeno que involucre la propagación en forma de ondas elásticas, generalmente a tráves de un fluido que esté generando el movimiento vibratorio de un cuerpo</li></p>
-    <p>Nivel de reducción de ruido
-    <li class="ml-5">Se define como la cantidad de sonido que el protector auditivo impide que llegue al oído, se expresa en decibeles (dB) y varía en función a la frecuencia</li></p>
-    <p>Decibel (dB)
-    <li class="ml-5">Es la unidad empleada para expresar la relación entre diferentes intensidades y potencias del sonido</li></p>
-    <p>Frecuencias
-    <li class="ml-5">Es la magnitud que mide el número de repeticiones por unidad de tiempo de cualquier fenómeno o suceso periódico</li></p>
-    <p><h4>Tipos de Ruido</h4>
-    Ruido continuo I
-    <li class="ml-5">Ruido cuya intensidad pertenece constante y presenta fluctuaciones menores a 5dB a lo largo del tiempo.</li></p>
+<body>
+<header class="container-fluid  text-white text-center detalle-producto">
+    <h2 class="text-uppercase" style="font-size: 50px">{{$producto->nombre}}</h2>
+</header>
+<div class="container-fluid mt-4 mb-4 contenedor-detalle">
+    <div class="row">
+        <div class="col-lg-3 ml-5 text-center">
+            <img class="image-border" src="/images/{{$producto->imagen}}" width="250" height="250">
+
+        </div>
+        <div class="col-lg-8">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 35px">Marca: {{$producto->marca->nombre}}</h5>
+                    <p class="card-text" style="font-size: 20px">Tipo de producto: {{$producto->tipo->nombre}}<br>
+                        Descripción: {{$producto->descripcion}}</p>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <a href="/fichas/{{$producto->ficha_tecnica}}" class="btn btn-primary">Ver ficha técnica</a>
+            </div>
+        </div>
+    </div>
 </div>
-
-<footer class="text-center">DIAJO SAC 2018</footer>
-
+<footer class="text-center">
+    DIAJO SAC 2018
+</footer>
 <!-- Bootstrap core JavaScript -->
+<script src="/vendors/jquery/jquery.min.js"></script>
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->

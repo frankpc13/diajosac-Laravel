@@ -27,14 +27,14 @@
 <header class="text-center login-bg">
     <h3>Administración</h3>
 </header>
-<div class="container-fluid login-d">
+<div class="container-fluid login-d mb-5">
 
     <div class="row">
         <div class="col-lg-4">
 
         </div>
-        <div class="col-lg-4">
-            <form method="POST" action="/sesion">
+        <div class="form-control col-lg-4">
+            <form method="POST" action="/admin/sesion">
                 <fieldset class="form-group">
                     <label class="" for="username">Nombre de Usuario</label>
                     <div class="">
@@ -48,7 +48,7 @@
                     </div>
                 </fieldset>
                 <div class="">
-                    <button class="btn btn-default" type="submit">Iniciar Sesión</button>
+                    <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
                 </div>
             </form>
         </div>
@@ -63,8 +63,10 @@
         </div>
     </div>
 </div>
-<footer class="text-center x-footer">
-    DIAJO SAC 2018
+<footer class="sticky-footer">
+    <div class="container">
+        <div class="text-center">DIAJO SAC 2018</div>
+    </div>
 </footer>
 
 <!-- Bootstrap core JavaScript -->

@@ -21,13 +21,15 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/creative.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css">
     <link rel="stylesheet" href="/vendors/jquery/jquery-ui.css">
     <link rel="stylesheet" href="/vendors/jquery/jquery-ui.theme.css">
     <link rel="stylesheet" href="/vendors/jquery/jquery-ui.structure.css">
 
     <script src="/vendors/jquery/jquery.min.js"></script>
     <script src="/vendors/jquery/jquery-ui.js"></script>
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
@@ -83,7 +85,9 @@
     </div>
 </header>
 <div class="container-fluid">
-    <form class="ml-4 mt-4" enctype="multipart/form-data" action="/create" method="POST">
+    <div class="col-lg-6 mt-4 mb-4">
+    <div class="form-control">
+        <form class="ml-4 mt-4" enctype="multipart/form-data" action="/create" method="POST">
         <div class="form-group row">
             <label for="nombre_producto" class="col-xs-3 col-form-label mr-2">Nombre del producto</label>
             <div class="col-xs-9">
@@ -138,10 +142,12 @@
         </div>
         <div class="form-group row">
             <div class="offset-xs-3 col-xs-9">
-                <button type="submit" class="btn btn-default">Registrar</button>
+                <button type="submit" class="btn btn-info">Registrar</button>
             </div>
         </div>
     </form>
+    </div>
+    </div>
 </div>
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>

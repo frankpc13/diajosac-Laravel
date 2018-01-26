@@ -70,18 +70,22 @@
         </div>
     </div>
 </nav>
-<header class="container-fluid  text-white text-center productos"><h1 class="text-uppercase">Normativa de los cascos de protección</h1></header>
+<header class="container-fluid  text-white text-center productos">
+    <h1 class="text-uppercase">Normativa de los cascos de protección</h1></header>
 <div class="container-fluid p-5">
     <p><h3>ANSI Z89.1</h3>
     La normativa "ANSI Z89.1" clasifica los cascos de acuerdo al impacto y las necesidades especificas.
-    Todos los cascos de conformidad con esta norma deben igualar  mejorar las especificaciones de Tipo y Clase especificadas en la norma.
+    Todos los cascos de conformidad con esta norma deben igualar  mejorar las especificaciones de Tipo y Clase
+    especificadas en la norma.
     </p>
     <p>Clasificación
         Tipos de impacto I
-    <li class="ml-5">Destinadas a reducir la fuera de impacto resultante de un golpe solo a la parte superior de la cabeza. Este tipo de casco es el
+    <li class="ml-5">Destinadas a reducir la fuera de impacto resultante de un golpe solo a la parte superior
+        de la cabeza. Este tipo de casco es el
         mas solicitado</li></p>
     <p>Tipos de Impacto II
-    <li class="ml-5">Destinadas a reducir la fuerza del impacto resultante de un golpe fuera del centro, en el lateral o la parte superior de la cabeza.
+    <li class="ml-5">Destinadas a reducir la fuerza del impacto resultante de un golpe fuera del centro, en el lateral
+        o la parte superior de la cabeza.
         Este tipo de casco es mas común en la industria minera.</li></p>
     <p>Tipo de aislamiento eléctrico Clase C (Conductor)
     <li class="ml-5">NO destinados a proporcionar protección contra el contacto con conductores eléctricos (no son probados)</li>

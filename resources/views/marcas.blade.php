@@ -81,7 +81,8 @@
     <div class="row">
         @foreach($marcas as $marca)
             <div class="col-md-6 col-lg-3 mb-3">
-                <a class="marca-title" href="/productos/marcas/{{$marca->id}}"><div class="card bg-light mb-3 card-d h-80">
+                <a class="marca-title" href="/productos/marcas/{{$marca->nombre}}">
+                    <div class="card bg-light mb-3 card-d h-80">
                         <img class="card-img-top resize-card" src="img/marcas/{{$marca->imagen}}">
                         <div class="card-title titlecard">{{$marca->nombre}}</div>
                         <div class="card-body">

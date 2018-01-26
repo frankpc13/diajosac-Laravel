@@ -19,21 +19,37 @@ class ProductoController extends Controller
     //carga de pagina de inicio
     public function index(){
         $producto=Producto::orderBy('nombre')->paginate(8);
-
+        $nombre=null;
         $tipo=Tipo::all();
         $resultados=Producto::orderBy('nombre')->paginate(8)->count();
         $total=Producto::all()->count();
-        return view('productos',compact('tipo','producto','resultados','total'));
+        $marca=Marca::all();
+        return view('productos',compact('tipo','marca','producto','resultados','total'));
     }
 
     //implementación de la busqueda para el buscador de productos
     public function buscarProducto($nombre){
-        $producto=Producto::where('nombre','like',"%{{$nombre}}%")->get();
-
+        $marca=Marca::all();
         $tipo=Tipo::all();
-        $resultados=Producto::orderBy('nombre')->paginate(8)->get();
-        $total=Producto::all()->count();
-        return view('productos',compact('tipo','producto','resultados','total'));
+        $auxMarca=Marca::where('nombre','like',"%{$nombre}%")->get()->first();
+        $auxTipo=Tipo::where('nombre','like',"%{$nombre}%")->get()->first();
+        if(is_null($auxMarca) && !is_null($auxTipo)){
+            $producto=Producto::where('nombre','like',"%{$nombre}%")->orWhere('Tipo_id',$auxTipo->id)->paginate(8);
+            $resultados=Producto::where('nombre','like',"%{$nombre}%")->orWhere('Tipo_id',$auxTipo->id)->paginate(8)->count();
+            $total=Producto::all()->count();
+            return view('productos',compact('tipo','marca','producto','resultados','total'));
+        }
+        if(is_null($auxTipo) && !is_null($auxMarca)){
+            $producto=Producto::where('nombre','like',"%{$nombre}%")->orWhere('Marca_id',$auxMarca->id)->paginate(8);
+            $resultados=Producto::where('nombre','like',"%{$nombre}%")->orWhere('Marca_id',$auxMarca->id)->paginate(8)->count();
+            $total=Producto::all()->count();
+            return view('productos',compact('tipo','marca','producto','resultados','total'));
+        }else{
+            $producto=Producto::where('nombre','like',"%{$nombre}%")->paginate(8);
+            $resultados=Producto::where('nombre','like',"%{$nombre}%")->paginate(8)->count();
+            $total=Producto::all()->count();
+            return view('productos',compact('tipo','marca','producto','resultados','total'));
+        }
     }
 
     //metodo para agregar nuevo producto
@@ -41,14 +57,21 @@ class ProductoController extends Controller
         $nuevo = new Producto();
         $nuevo->nombre = $request->get('nombre_producto');
         $nuevo->codigo = $request->get('codigo_producto');
-        //$nuevo->Tipo_id = $request->get('tipo_producto');
-        //$nuevo->Marca_id = $request->get('marca_producto');
-
+        //ingreso de descripcion
+        $nuevo->descripcion=$request->get('descripcion_producto');
         $marca=Marca::where('nombre','like',$request->get('marca_producto'))->get()->first();
         $tipo=Tipo::where('nombre','like',$request->get('tipo_producto'))->get()->first();
 
         $nuevo->Tipo_id=$tipo->id;
         $nuevo->Marca_id=$marca->id;
+
+        //ingreso de archivo pdf
+        if($request->hasFile('ficha_producto')&& $request->file('ficha_producto')->isValid()){
+            $pdf=$request->file('ficha_producto');
+            $nombrepdf=$request->file('ficha_producto')->getClientOriginalName();
+            Storage::disk('fichas')->put($nombrepdf,File::get($pdf));
+            $nuevo->ficha_tecnica=$nombrepdf;
+        }
 
         if ($request->hasFile('imagen_producto') && $request->file('imagen_producto')->isValid()) {
             $imagen = $request->file('imagen_producto');
@@ -77,6 +100,12 @@ class ProductoController extends Controller
 
     }
 
+    public function detalleProductoLista($nombre){
+        $producto=Producto::where('nombre',$nombre)->get()->first();
+
+        return view('detalle-producto')->with('producto',$producto);
+    }
+
     //metodo para poder actualizar los datos de un producto
     public function actualizarProducto(Request $request,$id){
        /* if(!$request->has('nombre_producto'||!$request->has('codigo_producto')||!$request->has('tipo_producto')
@@ -96,7 +125,18 @@ class ProductoController extends Controller
             $tipo = Tipo::where('nombre', 'like', $request->get('tipo_producto'))->get()->first();
             $producto->Tipo_id = $tipo->id;
 
+            $producto->descripcion=$request->get('descripcion_producto');
+            //editar pdf
+            if($request->hasFile('ficha_producto')&& $request->file('ficha_producto')->isValid()){
+                Storage::delete('/fichas/'.$producto->ficha_tecnica);
+
+                $pdf=$request->file('ficha_producto');
+                $nombrepdf=$request->file('ficha_producto')->getClientOriginalName();
+                Storage::disk('fichas')->put($nombrepdf,File::get($pdf));
+                $producto->ficha_tecnica=$nombrepdf;
+            }
             if ($request->hasFile('imagen_producto') && $request->file('imagen_producto')->isValid()) {
+                Storage::delete('/images/'.$producto->imagen);
                 $imagen = $request->file('imagen_producto');
                 $filename = $request->file('imagen_producto')->getClientOriginalName();
                 $imagen_resize=Image::make($imagen->getRealPath());
@@ -119,22 +159,26 @@ class ProductoController extends Controller
         return redirect("/lista");
     }
 
-    public function productosPorTipo($id){
-        $producto=Producto::where('Tipo_id',$id)->orderBy('nombre')->paginate(8);
+    public function productosPorTipo($nombre){
+        $tipoNombre=Tipo::where('nombre','like',$nombre)->get()->first();
+        $producto=Producto::where('Tipo_id',$tipoNombre->id)->orderBy('nombre')->paginate(8);
 
         $tipo=Tipo::all();
-        $resultados=Producto::where('Tipo_id',$id)->orderBy('nombre')->paginate(8)->count();
-        $total=Producto::all()->where('Tipo_id',$id)->count();
-        return view('productos',compact('tipo','producto','resultados','total'));
+        $resultados=Producto::where('Tipo_id',$tipoNombre->id)->orderBy('nombre')->paginate(8)->count();
+        $total=Producto::all()->where('Tipo_id',$tipoNombre->id)->count();
+        $marca=Marca::all();
+        return view('productos',compact('tipo','marca','producto','resultados','total'));
     }
 
-    public function productosPorMarca($id){
-        $producto=Producto::where('Marca_id',$id)->orderBy('nombre')->paginate(8);
+    public function productosPorMarca($nombre){
+        $nombreMarca=Marca::where('nombre','like',$nombre)->get()->first();
+        $producto=Producto::where('Marca_id',$nombreMarca->id)->orderBy('nombre')->paginate(8);
 
+        $marca=Marca::all();
         $tipo=Tipo::all();
-        $resultados=Producto::where('Marca_id',$id)->orderBy('nombre')->paginate(8)->count();
-        $total=Producto::all()->where('Marca_id',$id)->count();
-        return view('productos',compact('tipo','producto','resultados','total'));
+        $resultados=Producto::where('Marca_id',$nombreMarca->id)->orderBy('nombre')->paginate(8)->count();
+        $total=Producto::all()->where('Marca_id',$nombreMarca->id)->count();
+        return view('productos',compact('tipo','marca','producto','resultados','total'));
     }
 
     public function listaProducto(){
@@ -147,6 +191,6 @@ class ProductoController extends Controller
         $tipo=Tipo::all();
         $marca=Marca::all();
 
-        return view('/nuevo-producto',compact('tipo','marca'));
+        return view('nuevo-producto',compact('tipo','marca'));
     }
 }

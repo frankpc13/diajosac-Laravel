@@ -70,11 +70,14 @@
         </div>
     </div>
 </nav>
-<header class="container-fluid  text-white text-center productos"><h1 class="text-uppercase">Normativa sobre la protección visual</h1></header>
+<header class="container-fluid  text-white text-center productos">
+    <h1 class="text-uppercase">Normativa sobre la protección visual</h1></header>
 <div class="container-fluid p-5">
     <p><h3>ANSI Z87.1</h3>
-    ANSI (American National Standards Institute) establece los requerimientos de diseño, construcción, testeo y uso de los protectores visuales incluyendo estándares para resistencia de impacto y penetración.
-    Dentro de los requerimientos se incluye mas no está limitado a, durabilidad, limpieza, comodidad, ajuste seguro, lentes de prescripción y lo más
+    ANSI (American National Standards Institute) establece los requerimientos de diseño, construcción, testeo y uso
+    de los protectores visuales incluyendo estándares para resistencia de impacto y penetración.
+    Dentro de los requerimientos se incluye mas no está limitado a, durabilidad, limpieza, comodidad, ajuste seguro,
+    lentes de prescripción y lo más
     importante, que provean la protección adecuada contra los riesgos para los que fueron diseñados.
     </p>
 </div>

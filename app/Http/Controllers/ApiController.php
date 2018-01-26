@@ -12,7 +12,7 @@ class ApiController extends Controller
         if(Auth::attempt(['username'=>$request->get('username'),'password'=>$request->get('password')])){
             $user=Auth::user();
 
-            return redirect()->intended('lista');
+            return redirect()->intended('/admin/lista');
         }
         echo "<h4>La contraseña o usuario es incorrecto</h4>";
     }

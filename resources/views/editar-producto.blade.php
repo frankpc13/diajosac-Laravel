@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/creative.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/estilos.css">
+    <link  href="/css/estilos.css"  rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
@@ -29,23 +29,23 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DIAJO SAC</a>
+        <a class="navbar-brand js-scroll-trigger" href="/#page-top">DIAJO SAC</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index.html#about">Nosotros</a>
+                    <a class="nav-link js-scroll-trigger" href="/#about">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index.html#services">Servicios</a>
+                    <a class="nav-link js-scroll-trigger" href="/#services">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index.html#portfolio">Portafolio</a>
+                    <a class="nav-link js-scroll-trigger" href="/#portfolio">Portafolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index.html#contact">Contáctenos</a>
+                    <a class="nav-link js-scroll-trigger" href="/#contact">Contáctenos</a>
                 </li>
                 <!--<li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#contact">Catálogo</a>
@@ -56,9 +56,9 @@
                         Catálogo
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="marcas.html">Marcas</a>
-                        <a class="dropdown-item" href="productos.html">Productos</a>
-                        <a class="dropdown-item" href="normas.html">Normativas sobre EEP</a>
+                        <a class="dropdown-item" href="/marcas">Marcas</a>
+                        <a class="dropdown-item" href="/productos">Productos</a>
+                        <a class="dropdown-item" href="/normas">Normativas sobre EEP</a>
                     </div>
                 </li>
             </ul>
@@ -70,13 +70,15 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
-                    <strong>Ingrese su nuevo producto</strong>
+                    <strong>Edite su producto</strong>
                 </h1>
             </div>
         </div>
     </div>
 </header>
 <div class="container-fluid">
+    <div class="col-lg-6 mt-4 mb-4">
+    <div class="form-control">
     <form class="ml-4 mt-4" enctype="multipart/form-data" action="/editar/{{$producto->id}}" method="POST">
         <div class="form-group row">
             <label for="nombre_producto" class="col-xs-3 col-form-label mr-2">Nombre del producto</label>
@@ -87,7 +89,7 @@
         <div class="form-group row">
             <label for="imagen_producto" class="col-xs-3 col-form-label mr-2">Imagen del producto</label>
             <div class="col-xs-9">
-                <input type="file" accept="image/*" onchange="previewImage(this,[500],20);" class="form-control" id="imagen_producto" name="imagen_producto">
+                <input type="file" accept="image/*" value="{{$producto->imagen}}" onchange="previewImage(this,[500],20);" class="form-control" id="imagen_producto" name="imagen_producto">
             </div>
             <div class="imagePreview col-xs-9"></div>
             <div class="col-xs-1"><img class="img-thumbnail" style="width: 200px;height: 200px" src="/images/{{$producto->imagen}}"></div>
@@ -95,7 +97,7 @@
         <div class="form-group row">
             <label for="ficha_producto" class="col-xs-3 col-form-label mr-2">Ficha Técnica del producto</label>
             <div class="col-xs-9">
-                <input type="file" accept="application/pdf" class="form-control" id="ficha_producto" name="ficha_producto">
+                <input type="file" accept="application/pdf" value="{{$producto->ficha_tecnica}}" class="form-control" id="ficha_producto" name="ficha_producto">
             </div>
         </div>
         <div class="form-group row">
@@ -131,7 +133,7 @@
         <div class="form-group row">
             <label for="descripcion_producto" class="col-xs-3 col-form-label mr-2">Descripción del producto</label>
             <div class="col-xs-9">
-                <textarea type="text" class="form-control" id="descripcion_producto" name="descripcion_producto"></textarea>
+                <textarea type="text" class="form-control" id="descripcion_producto" name="descripcion_producto">{{$producto->descripcion}}</textarea>
             </div>
         </div>
         <div class="form-group row">
@@ -142,10 +144,12 @@
         </div>
         <div class="form-group row">
             <div class="offset-xs-3 col-xs-9">
-                <button type="submit" class="btn btn-default">Registrar</button>
+                <button type="submit" class="btn btn-info">Registrar</button>
             </div>
         </div>
     </form>
+    </div>
+    </div>
 </div>
 <script src="/js/html5.image.preview.js"></script>
 <!-- Bootstrap core JavaScript -->

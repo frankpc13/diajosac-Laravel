@@ -66,6 +66,11 @@ return [
             'root' => public_path() . '/images',
             'visibility' => 'public',
         ],
+        'fichas' => [
+            'driver' => 'local',
+            'root' => public_path() . '/fichas',
+            'visibility' => 'public',
+        ],
 
 
     ],

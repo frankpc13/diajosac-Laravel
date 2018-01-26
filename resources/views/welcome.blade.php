@@ -24,7 +24,6 @@
     <!-- Custom styles for this template -->
     <link href="/css/creative.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/estilos.css">
-
 </head>
 
 <body id="page-top">
@@ -65,7 +64,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{url("/login")}}">Iniciar Sesión</a>
+                    <a class="nav-link js-scroll-trigger" href="{{url("/admin/login")}}">Iniciar Sesión</a>
                 </li>
             </ul>
         </div>
@@ -279,6 +278,31 @@
                     R.U.C.: 20492055116 </p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Realiza tu consulta:</h3>
+            <div class="form-control">
+                <form id="emailer_form" action="enviar-correo" method="post">
+                <p><label for="nombre_usuario">Nombre:</label>
+                <input name="nombre_usuario" data-validation="required length alphanumeric" data-validation-allowing=" " data-validation-length="max30" id="nombre_usuario" type="text" class="form-control" placeholder="Ingrese su nombre completo">
+                </p>
+                <label for="apellido_usuario">Apellidos:</label>
+                <p><input name="apellido_usuario" data-validation="required length alphanumeric" data-validation-allowing=" " data-validation-length="max30" id="apellido_usuario" type="text" class="form-control" placeholder="Ingrese sus apellidos">
+                </p>
+                <label for="email_usuario">Email:</label>
+                <p><input name="email_usuario" data-validation="required email" id="email_usuario" type="email" class="form-control" placeholder="Ingrese su correo electrónico">
+                </p>
+                <label for="telefono_usuario">Teléfono</label>
+                <p><input name="telefono_usuario" id="telefono_usuario" data-validation="required number" data-validation-allowing="range[1;9999999999]" type="tel" class="form-control" placeholder="Ingrese su numero de telefono o celular">
+                </p>
+                <label for="consulta_usuario">Consulta:</label>
+                <p><textarea name="consulta_usuario" data-validation="required length" data-validation-length="min20 max100" id="consulta_usuario" type="text" class="form-control"></textarea>
+                </p>
+                <button type="submit" class="btn btn-info"><i class="fa fa-send"></i> Enviar</button>
+                </form>
+            </div>
+        </div>
+        </div>
     </div>
 </section>
 
@@ -290,16 +314,69 @@
 <script src="/vendors/jquery-easing/jquery.easing.min.js"></script>
 <script src="/vendors/scrollreveal/scrollreveal.min.js"></script>
 <script src="/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-
 <!-- Custom scripts for this template -->
 <script src="/js/creative.js"></script>
 <script src="/js/mapsDIAJO.js"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <div id="googleMap" style="width:100%;height: 400px;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHhus-j6mf3am0lWAkkKWzs9UXA5K_cUs&callback=myMap"></script>
 
 <footer class="text-center">DIAJO S.A.C. 2018</footer>
+<script>
+
+    var myLanguage = {
+        errorTitle: 'Form submission failed!',
+        requiredEmail:'Ingrese una dirección de correo',
+        requiredField:'Este es un campo requerido',
+        requiredFields: 'Tienes que llenar todos los campos',
+        badTime: 'You have not given a correct time',
+        badEmail: 'No has proporcionado una dirección de correo válida',
+        badTelephone: 'No has proporcionado un numero de telefono correcto',
+        badSecurityAnswer: 'You have not given a correct answer to the security question',
+        badDate: 'No has dado una fecha correcta',
+        lengthBadStart: 'The input value must be between ',
+        lengthBadEnd: ' carácteres',
+        lengthTooLongStart: 'El valor del texto es mas grande que ',
+        lengthTooShortStart: 'El valor del texto es mas pequeño que ',
+        notConfirmed: 'No ha sido confirmado el valor del texto',
+        badDomain: 'Mal dominio',
+        badUrl: 'No es una dirección URL válida',
+        badCustomVal: 'El texto es incorrecto',
+        andSpaces: ' y espacios ',
+        badInt: 'el texto ingresado no fue un numero correcto',
+        badSecurityNumber: 'Your social security number was incorrect',
+        badUKVatAnswer: 'Incorrect UK VAT Number',
+        badStrength: 'The password isn\'t strong enough',
+        badNumberOfSelectedOptionsStart: 'You have to choose at least ',
+        badNumberOfSelectedOptionsEnd: ' answers',
+        badAlphaNumeric: 'The input value can only contain alphanumeric characters ',
+        badAlphaNumericExtra: ' y ',
+        wrongFileSize: 'The file you are trying to upload is too large (max %s)',
+        wrongFileType: 'Only files of type %s is allowed',
+        groupCheckedRangeStart: 'Please choose between ',
+        groupCheckedTooFewStart: 'Please choose at least ',
+        groupCheckedTooManyStart: 'Please choose a maximum of ',
+        groupCheckedEnd: ' item(s)',
+        badCreditCard: 'The credit card number is not correct',
+        badCVV: 'The CVV number was not correct',
+        wrongFileDim : 'Incorrect image dimensions,',
+        imageTooTall : 'the image can not be taller than',
+        imageTooWide : 'the image can not be wider than',
+        imageTooSmall : 'the image was too small',
+        min : 'minimo',
+        max : 'maximo',
+        imageRatioNotAccepted : 'Image ratio is not accepted'
+    };
+
+    $.validate({
+        language:myLanguage,
+    });
+
+    // Restrict presentation length
+    $('#presentation').restrictLength( $('#pres-max-length') );
+
+</script>
 </body>
 
 </html>

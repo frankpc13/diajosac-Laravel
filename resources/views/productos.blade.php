@@ -78,31 +78,38 @@
 <div class="container-fluid">
     <div class="row lista-tipo">
         <div class="col-lg-3 mb-3">
-            <h2 class="my-4">Tipos de productos</h2>
+            <h4 class="my-4">Tipos de productos</h4>
             <a class="list-item marca-title" href="{{url("/productos")}}">Mostrar todo</a>
             <div class="list-group">
                 @foreach($tipo as $tipos)
-                    <a class="list-group-item marca-title" href="{{url("/productos/$tipos->id")}}">{{$tipos->nombre}}</a>
+                    <a class="list-group-item marca-title size-list" href="{{url("/productos/tipos/$tipos->nombre")}}">{{$tipos->nombre}}</a>
             @endforeach
-            <!--<a class="list-group-item" href="#">Chalecos</a>
-                <a class="list-group-item" href="#">Chalecos</a>
-                <a class="list-group-item" href="#">Chalecos</a>
-                <a class="list-group-item" href="#">Chalecos</a>-->
+            </div>
+            <br>
+            <h4>Marcas</h4>
+            <div class="list-group">
+                @foreach($marca as $marcas)
+                    <a class="list-group-item marca-title size-list" href="{{url("/productos/marcas/$marcas->nombre")}}">{{$marcas->nombre}}</a>
+                    @endforeach
             </div>
         </div>
         <div class="col-lg-9">
             <h4 class="my-4 ml-2">Resultados: {{$resultados}} de {{$total}}</h4>
-            <div id="searchbar" class="input-group col-md-4 pl-2">
-                <input class="form-control rounded" type="search" placeholder="buscar producto" id="example-search-input">
-                <span class="input-group-btn">
-                    <button class="btn btn-outline-secondary" type="button">
+            <form id="form" method="post" action="">
+                <div id="searchbar" class="input-group col-md-4 pl-2">
+                    <input class="form-control rounded" type="search" placeholder="buscar producto" name="busca" id="busca">
+                    <span class="input-group-btn">
+                    <button class="btn btn-outline-secondary" type="submit">
                     <i class="fa fa-search"></i>
                 </button>
                 </span>
-            </div>
+                </div>
+            </form>
+
             <div class="row extended">
                 @foreach($producto as $productos)
                     <div class="col-md-3 mb-3">
+                        <a href="/productos/detalle/{{$productos->nombre}}" class="marca-title">
                         <div class="card bg-light card-d">
                             <img class="card-img-top resize-card" src="/images/{{$productos->imagen}}">
                             <div class="card-title titlecard">{{$productos->nombre}}</div>
@@ -111,6 +118,7 @@
                                 <div class="card-text"></div>
                             </div>
                         </div>
+                        </a>
                     </div>
 
                     @if($loop->last)
@@ -127,7 +135,12 @@
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/jquery/jquery.min.js"></script>
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script>
+    $('#form').submit(function () {
+        var buscar=$('#busca').val();
+        $(this).attr('action',"/productos/buscar/"+buscar);
+    });
+</script>
 <!-- Plugin JavaScript -->
 <script src="/vendors/jquery-easing/jquery.easing.min.js"></script>
 <script src="/vendors/scrollreveal/scrollreveal.min.js"></script>
