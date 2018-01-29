@@ -25,10 +25,10 @@
 </head>
 <body>
 <header class="text-center login-bg">
-    <h3>Administración</h3>
+    <h3 class="text-uppercase">Administración</h3>
 </header>
-<div class="container-fluid login-d mb-5">
-
+<section>
+    <div class="container login-d">
     <div class="row">
         <div class="col-lg-4">
 
@@ -52,7 +52,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-sm-2 help-box m-4">
+        <div class="col-md-3 help-box m-4">
             <h4>Recueda que con tu cuenta puedes:</h4>
             <ul>
                 <li>Crear productos</li>
@@ -62,7 +62,8 @@
             </ul>
         </div>
     </div>
-</div>
+
+</section>
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">DIAJO SAC 2018</div>

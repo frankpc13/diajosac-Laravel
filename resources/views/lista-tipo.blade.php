@@ -28,20 +28,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Mis productoss">
-                <a class="nav-link" href="#">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis productoss">
+                <a class="nav-link" href="/admin/lista">
                     <i class="fa fa-fw fa-table"></i>
                     <span class="nav-link-text">Mis productos</span>
                 </a>
             </li>
-            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Mis marcas">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis marcas">
                 <a class="nav-link" href="/admin/lista-marcas">
                     <i class="fa fa-fw fa-address-book"></i>
                     <span class="nav-link-text">Mis marcas</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis tipos de productos">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Mis tipos de productos">
+                <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-archive"></i>
                     <span class="nav-link-text">Mis tipos de productos</span>
                 </a>
@@ -65,62 +65,47 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <div class="col-lg-3">
-        <div class="card mb-3">
-            <div class="card-header">
-                Añade mas productos a tu lista
+            <div class="card mb-3">
+                <div class="card-header">
+                    Añade mas tipos de productos a tu lista
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-success" href="/admin/nuevo-producto"><i class="fa fa-plus"></i> Crear Tipo de producto</a>
+                </div>
             </div>
-            <div class="card-body">
-                <a class="btn btn-success" href="/admin/nuevo-producto"><i class="fa fa-plus"></i> Crear Producto</a>
-            </div>
-        </div>
         </div>
         <!-- Example DataTables Card-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Lista de Productos</div>
+                <i class="fa fa-table"></i> Lista de Tipos de Productos</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Imagen</th>
                             <th>Nombre</th>
-                            <th>Código</th>
-                            <th>Marca</th>
-                            <th>Tipo de producto</th>
-                            <th>Ficha técnica</th>
                             <th>Edición</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>Id</th>
-                            <th>Imagen</th>
                             <th>Nombre</th>
-                            <th>Código</th>
-                            <th>Marca</th>
-                            <th>Tipo de producto</th>
-                            <th>Ficha técnica</th>
                             <th>Edición</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($productos as $producto)
-                        <tr>
-                            <th>{{$producto->id}}</th>
-                            <th><img class="img-thumbnail" width="100" height="100" src="/images/{{$producto->imagen}}"></th>
-                            <th>{{$producto->nombre}}</th>
-                            <th>{{$producto->codigo}}</th>
-                            <th>{{$producto->marca->nombre}}</th>
-                            <th>{{$producto->tipo->nombre}}</th>
-                            <th><a role="link" target="_blank" href="/fichas/{{$producto->ficha_tecnica}}">{{$producto->ficha_tecnica}}</a></th>
-                            <th><div class="text-center">
-                                    <a class="btn btn-info mb-1" role="button" href="/admin/editar-producto/{{$producto->id}}"><i class="fa fa-fw fa-edit"></i> Editar</a>
-                                    <button class="btn btn-danger delete" value="{{$producto->id}}" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-fw fa-eraser"></i> Borrar</button>
-                                </div>
-                            </th>
-                        </tr>
+                        @foreach($tipos as $tipo)
+                            <tr>
+                                <th>{{$tipo->id}}</th>
+                                <th>{{$tipo->nombre}}</th>
+                                <th><div class="text-center">
+                                        <a class="btn btn-info" role="button" href="/admin/editar-tipo/{{$tipo->id}}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                        <button class="btn btn-danger delete" value="{{$tipo->id}}" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-fw fa-eraser"></i> Borrar</button>
+                                    </div>
+                                </th>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>
@@ -164,12 +149,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">¿Quieres eliminar este producto?</h5>
+                    <h5 class="modal-title" id="deleteModalLabel">¿Quieres eliminar esta tipo de producto?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                {{--<div class="modal-body">Selecciona "Cerrar Sesión" si quieres terminar tu sesión actual</div>--}}
+                <div class="modal-body">Importante*: tendrás que eliminar los productos asociados a este tipo para poder eliminarlo, caso contrario
+                aparecerá un error</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-primary" id="deleteButton">Eliminar</a>
@@ -183,9 +169,9 @@
     <!-- Core plugin JavaScript-->
     <script src="/vendors/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-{{--
-    <script src="/vendors/chart.js/Chart.min.js"></script>
---}}
+    {{--
+        <script src="/vendors/chart.js/Chart.min.js"></script>
+    --}}
     <script src="/vendors/datatables/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function () {
@@ -218,7 +204,7 @@
             //el id del producto
             var id=$(this).val();
             //se abre el modal de mrd
-            $('#deleteButton').attr("href","/admin/borrar-producto/"+id);
+            $('#deleteButton').attr("href","/borrar-tipo/"+id);
             $('#deleteModal').modal();
         });
     </script>

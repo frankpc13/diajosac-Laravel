@@ -6,9 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio  ">
 
-    <title>Nuevo producto - DIAJO SAC</title>
-    {{--Añadir icono de diajo sac acanga--}}
-    <link rel="shortcut icon" type="image" href="/log   o.jpg">
+    <title>Nueva Marca - DIAJO SAC</title>
+
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -79,77 +78,33 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
-                    <strong>Ingrese su nuevo producto</strong>
+                    <strong>Ingrese su nueva Marca</strong>
                 </h1>
             </div>
         </div>
     </div>
 </header>
-<div class="container-fluid">
-    <div class="col-lg-6 mt-4 mb-4">
-    <div class="form-control">
-        <form class="ml-4 mt-4" enctype="multipart/form-data" action="/admin/create" method="POST">
-        <div class="form-group row">
-            <label for="nombre_producto" class="col-xs-3 col-form-label mr-2">Nombre del producto</label>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" id="nombre_producto" name="nombre_producto">
+<section>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-control">
+                    <form method="POST" enctype="multipart/form-data" action="/admin/create-brand" id="marca-form">
+                    <p><label for="nombre-marca">Nombre de la marca:</label>
+                    <input type="text" class="form-control" name="nombre-marca" id="nombre-marca"></p>
+                    <p><label for="codigo-marca">Código de la marca</label>
+                    <input type="text" class="form-control" name="codigo-marca" id="codigo-marca"></p>
+                        <p><label for="intro-marca">Descripción</label>
+                        <input type="text" class="form-control" name="intro-marca" id="intro-marca"></p>
+                        <p><label for="imagen-marca">Imagen:</label>
+                        <input class="form-control" name="imagen-marca" id="imagen-marca" type="file" accept="image/*"></p>
+                        <button type="submit" class="btn btn-info"><i class="fa fa-upload"></i> Registrar</button>
+                </form>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="imagen_producto" class="col-xs-3 col-form-label mr-2">Imagen del producto</label>
-            <div class="col-xs-9">
-                <input type="file" accept="image/*" class="form-control" id="imagen_producto" name="imagen_producto">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="ficha_producto" class="col-xs-3 col-form-label mr-2">Ficha Técnica del producto</label>
-            <div class="col-xs-9">
-                <input type="file" accept="application/pdf" class="form-control" id="ficha_producto" name="ficha_producto">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="descripcion_producto" class="col-xs-3 col-form-label mr-2">Descripción del producto</label>
-            <div class="col-xs-9">
-                <textarea type="text" class="form-control" id="descripcion_producto" name="descripcion_producto"></textarea>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="marca_producto" class="col-xs-3 col-form-label mr-2">Marca del producto</label>
-            <div class="col-xs-9">
-                <!--try to use this element for populate with brand name and types product name-->
-                <select class="custom-select form-control" id="marca_producto" name="marca_producto" >
-                    @foreach($marca as $marcas)
-                        <option value="{{$marcas->nombre}}">{{$marcas->nombre}}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="tipo_producto" class="col-xs-3 col-form-label mr-2">tipo de producto</label>
-            <div class="col-xs-9">
-                <!--try to use this element for populate with brand name and types product name-->
-                <select class="custom-select form-control" id="tipo_producto" name="tipo_producto">
-                    @foreach($tipo as $tipos)
-                        <option value="{{$tipos->nombre}}">{{$tipos->nombre}}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="codigo_producto" class="col-xs-3 col-form-label mr-2">codigo del producto</label>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" id="codigo_producto" name="codigo_producto">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="offset-xs-3 col-xs-9">
-                <button type="submit" class="btn btn-info">Registrar</button>
-            </div>
-        </div>
-    </form>
-    </div>
     </div>
 </div>
+</section>
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 

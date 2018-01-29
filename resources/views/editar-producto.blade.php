@@ -79,7 +79,7 @@
 <div class="container-fluid">
     <div class="col-lg-6 mt-4 mb-4">
     <div class="form-control">
-    <form class="ml-4 mt-4" enctype="multipart/form-data" action="/editar/{{$producto->id}}" method="POST">
+    <form class="ml-4 mt-4" enctype="multipart/form-data" action="/admin/editar/{{$producto->id}}" method="POST">
         <div class="form-group row">
             <label for="nombre_producto" class="col-xs-3 col-form-label mr-2">Nombre del producto</label>
             <div class="col-xs-9">

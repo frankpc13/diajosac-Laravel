@@ -278,7 +278,7 @@
                     R.U.C.: 20492055116 </p>
             </div>
         </div>
-        <div class="row">
+    <div class="row">
             <div class="col-lg-4">
                 <h3>Realiza tu consulta:</h3>
             <div class="form-control">

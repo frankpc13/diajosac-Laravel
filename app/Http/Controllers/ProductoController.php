@@ -85,7 +85,7 @@ class ProductoController extends Controller
         }
         $nuevo->save();
 
-        return redirect('/lista');
+        return redirect('/admin/lista');
         //}//
     }
 
@@ -100,19 +100,14 @@ class ProductoController extends Controller
 
     }
 
-    public function detalleProductoLista($nombre){
-        $producto=Producto::where('nombre',$nombre)->get()->first();
+    public function detalleProductoLista($codigo){
+        $producto=Producto::where('codigo',$codigo)->get()->first();
 
-        return view('detalle-producto')->with('producto',$producto);
+        return view('/detalle-producto')->with('producto',$producto);
     }
 
     //metodo para poder actualizar los datos de un producto
     public function actualizarProducto(Request $request,$id){
-       /* if(!$request->has('nombre_producto'||!$request->has('codigo_producto')||!$request->has('tipo_producto')
-            ||!$request->has('marca_producto'))){
-            echo "perro";
-            return redirect("/lista");
-        }else {*/
             $producto = Producto::find($id);
 
             $producto->nombre = $request->get('nombre_producto');
@@ -128,15 +123,18 @@ class ProductoController extends Controller
             $producto->descripcion=$request->get('descripcion_producto');
             //editar pdf
             if($request->hasFile('ficha_producto')&& $request->file('ficha_producto')->isValid()){
-                Storage::delete('/fichas/'.$producto->ficha_tecnica);
-
+                if(Storage::disk('fichas')->exists($producto->ficha_tecnica)){
+                    Storage::disk('fichas')->delete($producto->ficha_tecnica);
+                }
                 $pdf=$request->file('ficha_producto');
                 $nombrepdf=$request->file('ficha_producto')->getClientOriginalName();
                 Storage::disk('fichas')->put($nombrepdf,File::get($pdf));
                 $producto->ficha_tecnica=$nombrepdf;
             }
             if ($request->hasFile('imagen_producto') && $request->file('imagen_producto')->isValid()) {
-                Storage::delete('/images/'.$producto->imagen);
+                if(Storage::disk('images')->exists($producto->imagen)){
+                    Storage::disk('images')->delete($producto->imagen);
+                }
                 $imagen = $request->file('imagen_producto');
                 $filename = $request->file('imagen_producto')->getClientOriginalName();
                 $imagen_resize=Image::make($imagen->getRealPath());
@@ -148,19 +146,31 @@ class ProductoController extends Controller
             }
             $producto->save();
 
-            return redirect()->intended("/lista");
+            return redirect()->intended("/admin/lista");
         //}
     }
 
     public function borrarProducto($id)
     {
         $producto = Producto::find($id);
+        if(Storage::disk('fichas')->exists($producto->ficha_tecnica)){
+            Storage::disk('fichas')->delete($producto->ficha_tecnica);
+        }else{
+            echo "no existe la ficha tecnica";
+        }
+        if(Storage::disk('images')->exists($producto->imagen))
+        {
+            Storage::disk('images')->delete($producto->imagen);
+
+        }else{
+            echo "no funciona el borrado";
+        }
         $producto->delete();
-        return redirect("/lista");
+        return redirect("/admin/lista");
     }
 
-    public function productosPorTipo($nombre){
-        $tipoNombre=Tipo::where('nombre','like',$nombre)->get()->first();
+    public function productosPorTipo($codigo){
+        $tipoNombre=Tipo::where('codigo','like',$codigo)->get()->first();
         $producto=Producto::where('Tipo_id',$tipoNombre->id)->orderBy('nombre')->paginate(8);
 
         $tipo=Tipo::all();
@@ -170,8 +180,8 @@ class ProductoController extends Controller
         return view('productos',compact('tipo','marca','producto','resultados','total'));
     }
 
-    public function productosPorMarca($nombre){
-        $nombreMarca=Marca::where('nombre','like',$nombre)->get()->first();
+    public function productosPorMarca($codigo){
+        $nombreMarca=Marca::where('codigo','like',$codigo)->get()->first();
         $producto=Producto::where('Marca_id',$nombreMarca->id)->orderBy('nombre')->paginate(8);
 
         $marca=Marca::all();

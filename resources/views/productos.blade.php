@@ -82,14 +82,14 @@
             <a class="list-item marca-title" href="{{url("/productos")}}">Mostrar todo</a>
             <div class="list-group">
                 @foreach($tipo as $tipos)
-                    <a class="list-group-item marca-title size-list" href="{{url("/productos/tipos/$tipos->nombre")}}">{{$tipos->nombre}}</a>
+                    <a class="list-group-item marca-title size-list" href="{{url("/productos/tipos/$tipos->codigo")}}">{{$tipos->nombre}}</a>
             @endforeach
             </div>
             <br>
             <h4>Marcas</h4>
             <div class="list-group">
                 @foreach($marca as $marcas)
-                    <a class="list-group-item marca-title size-list" href="{{url("/productos/marcas/$marcas->nombre")}}">{{$marcas->nombre}}</a>
+                    <a class="list-group-item marca-title size-list" href="{{url("/productos/marcas/$marcas->codigo")}}">{{$marcas->nombre}}</a>
                     @endforeach
             </div>
         </div>
@@ -109,7 +109,7 @@
             <div class="row extended">
                 @foreach($producto as $productos)
                     <div class="col-md-3 mb-3">
-                        <a href="/productos/detalle/{{$productos->nombre}}" class="marca-title">
+                        <a href="/productos/detalle/{{$productos->codigo}}" class="marca-title">
                         <div class="card bg-light card-d">
                             <img class="card-img-top resize-card" src="/images/{{$productos->imagen}}">
                             <div class="card-title titlecard">{{$productos->nombre}}</div>

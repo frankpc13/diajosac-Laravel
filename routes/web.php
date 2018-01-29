@@ -38,25 +38,34 @@ Route::get('/normas/trajes_proteccion',function (){
     return view('traje');
 });
 //admin mode
+Route::get('/admin/nueva-marca',function (){
+  return view('nueva-marca');
+})->middleware('auth');
+Route::get('/admin/nuevo-tipo','TipoController@crearTipo')->middleware('auth');
 Route::get('/admin/nuevo-producto','ProductoController@crearProducto')->middleware('auth');
 Route::get('/admin/lista','ProductoController@listaProducto')->middleware('auth');
 Route::get('/admin/editar-producto/{id}','ProductoController@detalleProducto')->middleware('auth');
+Route::get('/admin/lista-marcas','MarcaController@listaMarca')->middleware('auth');
+Route::get('/admin/lista-tipo','TipoController@listaTipo')->middleware('auth');
 //user-mode
 Route::get('/admin/login',function (){
    return view('login');
 });
 //user-mode
-Route::get('/productos/detalle/{nombre}','ProductoController@detalleProductoLista');
+Route::get('/productos/detalle/{codigo}','ProductoController@detalleProductoLista');
 Route::get('/productos/buscar/{nombre}','ProductoController@buscarProducto');
-Route::get('/productos/tipos/{nombre}','ProductoController@productosPorTipo');
-Route::get('/productos/marcas/{nombre}','ProductoController@productosPorMarca');
+Route::get('/productos/tipos/{codigo}','ProductoController@productosPorTipo');
+Route::get('/productos/marcas/{codigo}','ProductoController@productosPorMarca');
 Route::post('/productos/buscar/{nombre}','ProductoController@buscarProducto');
 
 //admin mode
 Route::post('/admin/sesion','ApiController@login');
 Route::post('/admin/editar/{id}','ProductoController@actualizarProducto')->middleware('auth');
 Route::post('/admin/create','ProductoController@nuevoProducto')->middleware('auth');
+Route::post('/admin/create-brand','Marcacontroller@nuevaMarca')->middleware('auth');
+Route::post('/admin/create-type','TipoController@nuevoTipo')->middleware('auth');
 Route::get('/admin/borrar-producto/{id}','ProductoController@borrarProducto')->middleware('auth');
+Route::get('/admin/borrar-marca/{id}','MarcaController@borrarMarca')->middleware('auth');
 Route::get('/admin/logout','ApiController@cerrarSesion');
 
 //test de mail
