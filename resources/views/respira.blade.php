@@ -72,6 +72,7 @@
 </nav>
 <header class="container-fluid  text-white text-center productos"><h1 class="text-uppercase">Normativa sobre la protección respiratoria</h1></header>
 <div class="container-fluid p-5">
+    <div class="form-control">
     <p><h3>29 CFR 1910.134</h3>
     El estándar de protección respiratoria "29 CFR 1910.134" regula todos los aspectos de la protección respiratoria para la
     mayoria de los sitios de trabajo en la industria. Del estándar, se despliegan los lineamientos de la normativa 42 CFR 84, que
@@ -123,6 +124,7 @@
     <li class="ml-5">Fluido que, por la casi nula fuerza de atracción entre sus moléculas tiende a expandirse de manera indefinida y que se caracteriza por su pequeña densidad</li></p>
     <p>Vapores
     <li class="ml-5">Estado gaseoso que adquieren los fluidos como consecuenciade la acción de las variables calor y presión</li></p>
+</div>
 </div>
 
 <footer class="text-center">DIAJO SAC 2018</footer>

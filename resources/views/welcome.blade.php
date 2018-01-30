@@ -275,7 +275,7 @@
                     <br>
                     Tel:(511) 449-2569
                     <br>
-                    R.U.C.: 20492055116 </p>
+                    R.U.C: 20492055116 </p>
             </div>
         </div>
     <div class="row">
@@ -370,7 +370,7 @@
     };
 
     $.validate({
-        language:myLanguage,
+        language:myLanguage
     });
 
     // Restrict presentation length

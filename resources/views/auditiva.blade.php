@@ -73,6 +73,7 @@
 <header class="container-fluid  text-white text-center productos">
     <h1 class="text-uppercase">Normativa sobre la protección auditiva</h1></header>
 <div class="container-fluid p-5">
+    <div class="form-control">
     <p><h3>ANSI S3.19-1974</h3>
     La norma "ANSI S3.19-1974" mide y determina el nuvel de reducción de ruido (NBR) de un protector auditivo expuesto a
     diferentes tipos de frecuencias. Existen diferentes términos básicos dentro de la normativa que revisaremos a continuación:
@@ -90,6 +91,7 @@
     <p><h4>Tipos de Ruido</h4>
     Ruido continuo I
     <li class="ml-5">Ruido cuya intensidad pertenece constante y presenta fluctuaciones menores a 5dB a lo largo del tiempo.</li></p>
+</div>
 </div>
 
 <footer class="text-center">DIAJO SAC 2018</footer>

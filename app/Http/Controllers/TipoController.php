@@ -23,19 +23,19 @@ class TipoController extends Controller
     //function to show a list a type of products
     public function listaTipo(){
         $tipo=Tipo::all();
-        return view('/admin/lista-tipo',['tipos'=>$tipo]);
+        return view('lista-tipo',['tipos'=>$tipo]);
     }
 
     //function to delete a type of product
     public function borrarTipo($id){
         $tipo=Tipo::find($id);
         $tipo->delete();
-        return view('/admin/lista-tipo');
+        return redirect('/admin/lista-tipo');
     }
 
     public function detalleTipo($id){
         $tipo=Tipo::find($id);
-        return view('/admin/editar-tipo')->with('tipo',$tipo);
+        return view('editar-tipo')->with('tipo',$tipo);
     }
     //function to edit a type a product
     public function editarTipo(Request $request,$id){

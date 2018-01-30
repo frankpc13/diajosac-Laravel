@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis tipos de productos">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/admin/lista-tipo">
                     <i class="fa fa-fw fa-archive"></i>
                     <span class="nav-link-text">Mis tipos de productos</span>
                 </a>

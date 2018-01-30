@@ -71,15 +71,30 @@
     </div>
 </nav>
 <header class="container-fluid  text-white text-center productos">
-    <h1 class="text-uppercase">Normativa sobre la protección visual</h1></header>
+    <br>
+    <h1 class="text-uppercase">Normativa sobre la protección visual</h1>
+
+</header>
 <div class="container-fluid p-5">
-    <p><h3>ANSI Z87.1</h3>
-    ANSI (American National Standards Institute) establece los requerimientos de diseño, construcción, testeo y uso
-    de los protectores visuales incluyendo estándares para resistencia de impacto y penetración.
-    Dentro de los requerimientos se incluye mas no está limitado a, durabilidad, limpieza, comodidad, ajuste seguro,
-    lentes de prescripción y lo más
-    importante, que provean la protección adecuada contra los riesgos para los que fueron diseñados.
-    </p>
+    <div class="row">
+    <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <div class="form-control text-center">
+                <p><h3>ANSI Z87.1</h3>
+                ANSI (American National Standards Institute) establece los requerimientos de diseño, construcción, testeo y uso
+                de los protectores visuales incluyendo estándares para resistencia de impacto y penetración.
+                Dentro de los requerimientos se incluye mas no está limitado a, durabilidad, limpieza, comodidad, ajuste seguro,
+                lentes de prescripción y lo más
+                importante, que provean la protección adecuada contra los riesgos para los que fueron diseñados.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <br><br>
+        </div>
+    </div>
 </div>
 
 <footer class="text-center">DIAJO SAC 2018</footer>

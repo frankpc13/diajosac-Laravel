@@ -40,6 +40,10 @@ class MarcaController extends Controller
         return redirect('/admin/lista-marcas');
     }
 
+    public function detalleMarca($id){
+        $marca=Marca::find($id);
+        return view('editar-marca')->with('marca',$marca);
+    }
     public function editarMarca(Request $request,$id){
         $marca=Marca::find($id);
         $marca->nombre=$request->input('nombre-marca');

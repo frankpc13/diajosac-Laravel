@@ -71,6 +71,7 @@
     <h1 class="text-uppercase">Normativa sobre los trajes de protección</h1>
 </header>
 <div class="container-fluid p-5">
+    <div class="form-control">
     <div class="row">
         <div class="col-lg-1">
             <img  class="img" src="/imagen-traje/c1.jpg" width="100" height="100">
@@ -210,6 +211,7 @@
             protección contra la penetración de patógenos transmitidos por la sangre, usando el sistema de prueba de penetración
             del bacteriófago Phi-X174.</p>
         </div>
+    </div>
     </div>
 </div>
 

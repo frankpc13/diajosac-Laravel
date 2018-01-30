@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio  ">
 
-    <title>Nuevo Tipo de producto - DIAJO SAC</title>
+    <title>Nueva Marca - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,18 +19,19 @@
     <!-- Plugin CSS -->
     <link href="/vendors/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="/css/sb-admin.css" rel="stylesheet">
-    <link href="/css/estilos-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="/vendors/jquery/jquery-ui.css">
     <link rel="stylesheet" href="/vendors/jquery/jquery-ui.theme.css">
     <link rel="stylesheet" href="/vendors/jquery/jquery-ui.structure.css">
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/estilos-admin.css" rel="stylesheet">
 
     <script src="/vendors/jquery/jquery.min.js"></script>
     <script src="/vendors/jquery/jquery-ui.js"></script>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top tema-navbar-lista" id="mainNav">
@@ -46,14 +47,14 @@
                     <span class="nav-link-text">Mis productos</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis marcas">
+            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Mis marcas">
                 <a class="nav-link" href="/admin/lista-marcas">
                     <i class="fa fa-fw fa-address-book"></i>
                     <span class="nav-link-text">Mis marcas</span>
                 </a>
             </li>
-            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Mis tipos de productos">
-                <a class="nav-link" href="/admin/lista-tipo">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis tipos de productos">
+                <a class="nav-link" href="tables.html">
                     <i class="fa fa-fw fa-archive"></i>
                     <span class="nav-link-text">Mis tipos de productos</span>
                 </a>
@@ -80,33 +81,43 @@
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h4 class="text-uppercase">
-                    <strong style="color: teal;">Edite su tipo de producto</strong>
-                </h4>
+                <h3 class="text-uppercase">
+                    <strong style="color: #1f648b;">Edite su Marca</strong>
+                </h3>
             </div>
         </div>
     </div>
 </header>
-    <div class="container">
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div class="form-control">
-                    <form method="POST" enctype="multipart/form-data" action="/admin/edit-type/{{$tipo->id}}" id="marca-form">
-                        <p><label for="nombre-tipo">Nombre del tipo de producto:</label>
-                            <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" value="{{$tipo->nombre}}" name="nombre-tipo" id="nombre-tipo"></p>
-                        <p><label for="codigo-tipo">Código del tipo de producto</label>
-                            <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" value="{{$tipo->codigo}}" name="codigo-tipo" id="codigo-tipo"></p>
-                        <p><label for="intro-tipo">Descripción</label>
-                            <textarea type="text" data-validation="length required alphanumeric" data-validation-length="3-100" class="form-control" value="{{$tipo->introducción}}" name="intro-tipo" id="intro-tipo"></textarea></p>
+                    <form method="POST" enctype="multipart/form-data" action="/admin/edit-brand/{{$marca->id}}" id="marca-form">
+                        <p><label for="nombre-marca">Nombre de la marca:</label>
+                            <input data-validation="length alphanumeric" data-validation-length="3-15" type="text" value="{{$marca->nombre}}" class="form-control" name="nombre-marca" id="nombre-marca"></p>
+                        <p><label for="codigo-marca">Código de la marca</label>
+                            <input type="text" data-validation="required" data-validation-length="3-15" class="form-control" value="{{$marca->codigo}}" name="codigo-marca" id="codigo-marca"></p>
+                        <p><label for="intro-marca">Descripción</label>
+                            <textarea type="text" data-validation="required" class="form-control" value="{{$marca->introduccion}}" name="intro-marca" id="intro-marca"></textarea></p>
+                        <p><label for="imagen-marca">Imagen:</label>
+                            <input class="form-control" data-validation="required" name="imagen-marca" id="imagen-marca" type="file" accept="image/*"></p>
+                        <img class="img-thumbnail" width="150" height="150" src="/img/marcas/{{$marca->imagen}}"><br><br>
                         <button type="submit" class="btn btn-info"><i class="fa fa-upload"></i> Registrar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 </div>
+<!-- Bootstrap core JavaScript -->
+<script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/vendors/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendors/scrollreveal/scrollreveal.min.js"></script>
+<script src="/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<!-- /.content-wrapper-->
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
@@ -114,7 +125,6 @@
         </div>
     </div>
 </footer>
-
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fa fa-angle-up"></i>
@@ -137,15 +147,6 @@
         </div>
     </div>
 </div>
-<!-- Bootstrap core JavaScript -->
-<script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="/vendors/jquery-easing/jquery.easing.min.js"></script>
-<script src="/vendors/scrollreveal/scrollreveal.min.js"></script>
-<script src="/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-
 <!-- Custom scripts for all pages-->
 <script src="/js/sb-admin.js"></script>
 <script>

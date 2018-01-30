@@ -71,8 +71,10 @@
     </div>
 </nav>
 <header class="container-fluid  text-white text-center productos">
-    <h1 class="text-uppercase">Normativa de los cascos de protección</h1></header>
+    <h1 class="text-uppercase">Normativa de los cascos de protección</h1>
+</header>
 <div class="container-fluid p-5">
+    <div class="form-control">
     <p><h3>ANSI Z89.1</h3>
     La normativa "ANSI Z89.1" clasifica los cascos de acuerdo al impacto y las necesidades especificas.
     Todos los cascos de conformidad con esta norma deben igualar  mejorar las especificaciones de Tipo y Clase
@@ -96,6 +98,7 @@
     </p>
     <p>Tipo de aislamiento eléctrico Clase E (Eléctrica)
     <li class="ml-5">Destinada a reducir el peligro o la exposición a los conductores de mayor voltaje</li></p>
+    </div>
 </div>
 
 <footer class="text-center">DIAJO SAC 2018</footer>

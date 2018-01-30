@@ -74,6 +74,7 @@
     <h1 class="text-uppercase">Normativa sobre los guantes de protección</h1>
 </header>
 <div class="container-fluid p-5">
+    <div class="form-control">
     <div class="row">
         <div class="col-lg-1">
             <img class="img-thumbnail" src="/imagen-guante/FDA.png" height="100" width="100">
@@ -194,7 +195,7 @@
             </p>
         </div>
     </div>
-
+    </div>
 </div>
 
 <footer class="text-center">DIAJO SAC 2018</footer>
