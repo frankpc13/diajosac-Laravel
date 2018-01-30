@@ -70,7 +70,7 @@
                     Añade mas tipos de productos a tu lista
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-success" href="/admin/nuevo-producto"><i class="fa fa-plus"></i> Crear Tipo de producto</a>
+                    <a class="btn btn-success" href="/admin/nuevo-tipo"><i class="fa fa-plus"></i> Crear Tipo de producto</a>
                 </div>
             </div>
         </div>
@@ -204,7 +204,7 @@
             //el id del producto
             var id=$(this).val();
             //se abre el modal de mrd
-            $('#deleteButton').attr("href","/borrar-tipo/"+id);
+            $('#deleteButton').attr("href","/admin/borrar-tipo/"+id);
             $('#deleteModal').modal();
         });
     </script>

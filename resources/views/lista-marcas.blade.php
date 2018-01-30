@@ -67,10 +67,10 @@
         <div class="col-lg-3">
             <div class="card mb-3">
                 <div class="card-header">
-                    Añade mas productos a tu lista
+                    Añade nuevas marcas a tu lista
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-success" href="/admin/nueva-marca"><i class="fa fa-plus"></i> Crear Producto</a>
+                    <a class="btn btn-success" href="/admin/nueva-marca"><i class="fa fa-plus"></i> Añadir marca</a>
                 </div>
             </div>
         </div>

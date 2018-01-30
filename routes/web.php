@@ -41,7 +41,10 @@ Route::get('/normas/trajes_proteccion',function (){
 Route::get('/admin/nueva-marca',function (){
   return view('nueva-marca');
 })->middleware('auth');
-Route::get('/admin/nuevo-tipo','TipoController@crearTipo')->middleware('auth');
+Route::get('/admin/nuevo-tipo',function (){
+   return view('nuevo-tipo');
+})->middleware('auth');
+
 Route::get('/admin/nuevo-producto','ProductoController@crearProducto')->middleware('auth');
 Route::get('/admin/lista','ProductoController@listaProducto')->middleware('auth');
 Route::get('/admin/editar-producto/{id}','ProductoController@detalleProducto')->middleware('auth');
@@ -66,8 +69,10 @@ Route::post('/admin/create-brand','Marcacontroller@nuevaMarca')->middleware('aut
 Route::post('/admin/create-type','TipoController@nuevoTipo')->middleware('auth');
 Route::get('/admin/borrar-producto/{id}','ProductoController@borrarProducto')->middleware('auth');
 Route::get('/admin/borrar-marca/{id}','MarcaController@borrarMarca')->middleware('auth');
+Route::get('/admin/borrar-tipo/{id}','TipoController@borrarTipo')->middleware('auth');
 Route::get('/admin/logout','ApiController@cerrarSesion');
-
+Route::post('/admin/edit-type/{id}','TipoController@editarTipo')->middleware('auth');
+Route::get('/admin/editar-tipo/{id}','TipoController@detalleTipo')->middleware('auth');
 //test de mail
 Route::post('enviar-correo',function (\Illuminate\Http\Request $request,Illuminate\Mail\Mailer $mailer){
     $mailer->to('paul.frankpc@gmail.com')
