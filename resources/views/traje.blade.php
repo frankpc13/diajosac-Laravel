@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio">
 
-    <title>Normativa de protección visual - DIAJO SAC</title>
+    <title>Normativa de trajes de protección - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">

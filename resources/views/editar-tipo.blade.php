@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio  ">
 
-    <title>Nuevo Tipo de producto - DIAJO SAC</title>
+    <title>Edición Tipo de producto - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">

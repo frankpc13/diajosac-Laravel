@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio  ">
 
-    <title>Marcas - DIAJO SAC</title>
+    <title>Nuestros Productos - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -109,8 +109,9 @@
             <div class="row extended">
                 @foreach($producto as $productos)
                     <div class="col-md-3 mb-3">
-                        <a href="/productos/detalle/{{$productos->codigo}}" class="marca-title">
+
                         <div class="card bg-light card-d">
+                            <a href="/productos/detalle/{{$productos->codigo}}" class="marca-title">
                             <img class="card-img-top resize-card" src="/images/{{$productos->imagen}}">
                             <div class="card-title titlecard">{{$productos->nombre}}</div>
                             <div class="card-body">

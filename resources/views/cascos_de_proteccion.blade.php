@@ -61,9 +61,9 @@
                         Catálogo
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="marcas">Marcas</a>
-                        <a class="dropdown-item" href="productos">Productos</a>
-                        <a class="dropdown-item" href="normas">Normativas sobre EEP</a>
+                        <a class="dropdown-item" href="/marcas">Marcas</a>
+                        <a class="dropdown-item" href="/productos">Productos</a>
+                        <a class="dropdown-item" href="/normas">Normativas sobre EEP</a>
                     </div>
                 </li>
             </ul>

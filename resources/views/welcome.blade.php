@@ -84,7 +84,7 @@
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-info mb-5"><strong style="color: white; font-size: 25px">Somos una empresa distribuidora de equipos de protección
-                        personal e higiene, con el proposito brindar soluciones productivas y efectivas en el campo laboral</strong></p>
+                        personal e higiene, con el propósito de brindar soluciones productivas y efectivas en el campo laboral</strong></p>
                 <!--<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>-->
             </div>
         </div>
