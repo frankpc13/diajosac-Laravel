@@ -21,8 +21,9 @@ class Consulta extends Mailable
     public $apellido;
     public $telefono;
     public $consulta;
+    public $empresa;
 
-    public function __construct($correo,$nombre,$apellido,$telefono,$consulta)
+    public function __construct($correo,$nombre,$apellido,$telefono,$consulta,$empresa)
     {
         //
         $this->consulta=$consulta;
@@ -30,6 +31,7 @@ class Consulta extends Mailable
         $this->apellido=$apellido;
         $this->telefono=$telefono;
         $this->correo=$correo;
+        $this->empresa=$empresa;
     }
 
     /**

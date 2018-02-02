@@ -79,8 +79,8 @@
                     <strong>Bienvenidos a DIAJO SAC</strong>
                 </h1>
                 <br>
-                <br>
-                <hr>
+                <br><br>
+                <hr class="light">
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-info mb-5"><strong style="color: white; font-size: 25px">Somos una empresa distribuidora de equipos de protección
@@ -244,10 +244,10 @@
         </div>
     </div>
 </section>
-<section id="contact">
+<section class="bg-primary" style="color: white" id="contact">
     <div class="container">
         <h2 class="section-heading text-center">Contáctenos</h2>
-        <hr class="my-4">
+        <hr class="light my-4">
         <div class="row">
             <div class="col-sm text-center">
                 <p><strong>Gerente General</strong><br>
@@ -289,6 +289,8 @@
                 <label for="apellido_usuario">Apellidos:</label>
                 <p><input name="apellido_usuario" data-validation="required length alphanumeric" data-validation-allowing=" " data-validation-length="max30" id="apellido_usuario" type="text" class="form-control" placeholder="Ingrese sus apellidos">
                 </p>
+                    <label for="empresa_usuario">Empresa:</label>
+                    <p><input name="empresa_usuario" data-validation="required lenght alphanumeric" data-validation-allowing=" " data-validation-length="max30" id="empresa_usuario" type="text" class="form-control" placeholder="Ingrese el nombre de su empresa"></p>
                 <label for="email_usuario">Email:</label>
                 <p><input name="email_usuario" data-validation="required email" id="email_usuario" type="email" class="form-control" placeholder="Ingrese su correo electrónico">
                 </p>

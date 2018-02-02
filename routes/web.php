@@ -70,7 +70,7 @@ Route::post('/admin/create-type','TipoController@nuevoTipo')->middleware('auth')
 Route::get('/admin/borrar-producto/{id}','ProductoController@borrarProducto')->middleware('auth');
 Route::get('/admin/borrar-marca/{id}','MarcaController@borrarMarca')->middleware('auth');
 Route::get('/admin/borrar-tipo/{id}','TipoController@borrarTipo')->middleware('auth');
-Route::get('/admin/logout','ApiController@cerrarSesion');
+Route::get('/admin/logout','ApiController@cerrarSesion')->middleware('auth');
 Route::post('/admin/edit-type/{id}','TipoController@editarTipo')->middleware('auth');
 Route::post('/admin/edit-brand/{id}','MarcaController@editarMarca')->middleware('auth');
 Route::get('/admin/editar-tipo/{id}','TipoController@detalleTipo')->middleware('auth');
@@ -79,6 +79,6 @@ Route::get('/admin/editar-marca/{id}','MarcaController@detalleMarca')->middlewar
 Route::post('enviar-correo',function (\Illuminate\Http\Request $request,Illuminate\Mail\Mailer $mailer){
     $mailer->to('paul.frankpc@gmail.com')
         ->send(new \App\Mail\Consulta($request->input('email_usuario'),$request->input('nombre_usuario'),
-            $request->input('apellido_usuario'),$request->input('telefono_usuario'),$request->input('consulta_usuario')));
+            $request->input('apellido_usuario'),$request->input('telefono_usuario'),$request->input('consulta_usuario'),$request->input('empresa_usuario')));
     return redirect()->back();
 });
