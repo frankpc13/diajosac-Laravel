@@ -94,19 +94,20 @@
                 <div class="form-control">
                     <form method="POST" enctype="multipart/form-data" action="/admin/edit-brand/{{$marca->id}}" id="marca-form">
                         <p><label for="nombre-marca">Nombre de la marca:</label>
-                            <input data-validation="length alphanumeric" data-validation-length="3-15" type="text" value="{{$marca->nombre}}" class="form-control" name="nombre-marca" id="nombre-marca"></p>
+                            <input data-validation="length" data-validation-length="3-20" type="text" value="{{$marca->nombre}}" class="form-control" name="nombre-marca" id="nombre-marca"></p>
                         <p><label for="codigo-marca">Código de la marca</label>
-                            <input type="text" data-validation="required" data-validation-length="3-15" class="form-control" value="{{$marca->codigo}}" name="codigo-marca" id="codigo-marca"></p>
+                            <input type="text" data-validation="" data-validation-length="3-20" class="form-control" value="{{$marca->codigo}}" name="codigo-marca" id="codigo-marca"></p>
                         <p><label for="intro-marca">Descripción</label>
-                            <textarea type="text" data-validation="required" class="form-control" value="{{$marca->introduccion}}" name="intro-marca" id="intro-marca"></textarea></p>
+                            <textarea type="text" data-validation="" class="form-control" value="{{$marca->introduccion}}" name="intro-marca" id="intro-marca"></textarea></p>
                         <p><label for="imagen-marca">Imagen:</label>
-                            <input class="form-control" data-validation="required" name="imagen-marca" id="imagen-marca" type="file" accept="image/*"></p>
+                            <input class="form-control" data-validation="" name="imagen-marca" id="imagen-marca" type="file" accept="image/*"></p>
                         <img class="img-thumbnail" width="150" height="150" src="/img/marcas/{{$marca->imagen}}"><br><br>
                         <button type="submit" class="btn btn-info"><i class="fa fa-upload"></i> Registrar</button>
                     </form>
                 </div>
             </div>
         </div>
+        <br>
     </div>
 </div>
 <!-- Bootstrap core JavaScript -->

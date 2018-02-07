@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <h3 class="text-uppercase">
-                        <strong style="color: #1f648b;">Edite su Marca</strong>
+                        <strong style="color: #1f648b;">Registre una nueva marca</strong>
                     </h3>
                 </div>
             </div>
@@ -92,11 +92,11 @@
             <div class="form-control">
                     <form method="POST" enctype="multipart/form-data" action="/admin/create-brand" id="marca-form">
                     <p><label for="nombre-marca">Nombre de la marca:</label>
-                    <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" name="nombre-marca" id="nombre-marca"></p>
+                    <input type="text" data-validation="length required" data-validation-length="3-25" class="form-control" name="nombre-marca" id="nombre-marca"></p>
                     <p><label for="codigo-marca">Código de la marca</label>
-                    <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" name="codigo-marca" id="codigo-marca"></p>
+                    <input type="text" data-validation="length required" data-validation-length="3-20" class="form-control" name="codigo-marca" id="codigo-marca"></p>
                         <p><label for="intro-marca">Descripción</label>
-                            <textarea type="text" data-validation="length required alphanumeric" data-validation-length="3-100" class="form-control" name="intro-marca" id="intro-marca"></textarea></p>
+                            <textarea type="text" data-validation="length required" data-validation-length="3-100" class="form-control" name="intro-marca" id="intro-marca"></textarea></p>
                         <p><label for="imagen-marca">Imagen:</label>
                         <input class="form-control" data-validation="required" name="imagen-marca" id="imagen-marca" type="file" accept="image/*"></p>
                         <button type="submit" class="btn btn-info"><i class="fa fa-upload"></i> Registrar</button>

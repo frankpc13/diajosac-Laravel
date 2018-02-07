@@ -2,8 +2,11 @@
 
 namespace App\Console;
 
+use App\Mail\Boletin;
+use App\Models\Destinatario;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Mail;
 
 class Kernel extends ConsoleKernel
 {
@@ -26,6 +29,19 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->call(function (){
+            $users=Destinatario::all();
+
+            //insertar usuarios de base de datos para poder el boletin cada mes//
+            //$users=['paul.frankpc@gmail.com','sergioaqs17@gmail.com','anthonylf797@gmail.com'];
+            //funcion para enviar el correo
+            //me envia el correo dependiendo de las personas
+            foreach ($users as $user){
+                $array[]=$user->correo;
+            }
+                /*Mail::to('paul.frankpc@hotmail.com')->cc($array)->send(new \App\Mail\Boletin());*/
+            Mail::to('paul.frankpc@gmail.com')->send(new \App\Mail\Boletin());
+            })->everyMinute();
     }
 
     /**

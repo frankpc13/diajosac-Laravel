@@ -96,7 +96,7 @@
                 <form method="post" enctype="multipart/form-data" action="/admin/create" id="marca-form">
                     <p>
                         <label for="nombre_producto">Nombre del producto:</label>
-                        <input type="text" data-validation="length alphanumeric" data-validation-length="3-12" class="form-control" id="nombre_producto" name="nombre_producto">
+                        <input type="text" data-validation="length" data-validation-length="3-60" class="form-control" id="nombre_producto" name="nombre_producto">
                     </p>
                     <p>
                         <label for="imagen_producto">Imagen del producto</label>

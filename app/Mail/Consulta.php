@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Destinatario;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -32,6 +33,14 @@ class Consulta extends Mailable
         $this->telefono=$telefono;
         $this->correo=$correo;
         $this->empresa=$empresa;
+
+        $nuevo=new Destinatario();
+        $nuevo->nombre=$nombre;
+        $nuevo->apellido=$apellido;
+        $nuevo->telefono=$telefono;
+        $nuevo->empresa=$empresa;
+        $nuevo->correo=$correo;
+        $nuevo->save();
     }
 
     /**

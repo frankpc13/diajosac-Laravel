@@ -88,16 +88,16 @@
                 <form enctype="multipart/form-data" action="/admin/editar/{{$producto->id}}" method="POST" id="form-producto">
                     <p>
                         <label for="nombre_producto">Nombre del producto</label>
-                        <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" value="{{$producto->nombre}}" id="nombre_producto" name="nombre_producto">
+                        <input type="text" data-validation="length required" data-validation-length="3-60" class="form-control" value="{{$producto->nombre}}" id="nombre_producto" name="nombre_producto">
                     </p>
                     <p>
                         <label for="imagen_producto">Imagen del producto</label>
-                        <input type="file" data-validation="required" accept="image/*" value="{{$producto->imagen}}" onchange="previewImage(this,[500],20);" class="form-control" id="imagen_producto" name="imagen_producto">
+                        <input type="file" accept="image/*" value="{{$producto->imagen}}" onchange="previewImage(this,[500],20);" class="form-control" id="imagen_producto" name="imagen_producto">
                         <img class="img-thumbnail" src="/images/{{$producto->imagen}}" width="150" height="150">
                     </p>
                     <p>
                         <label for="ficha_producto">Ficha Técnica del producto</label>
-                        <input type="file" data-validation="required" accept="application/pdf" value="{{$producto->ficha_tecnica}}" class="form-control" id="ficha_producto" name="ficha_producto">
+                        <input type="file" accept="application/pdf" value="{{$producto->ficha_tecnica}}" class="form-control" id="ficha_producto" name="ficha_producto">
                         <a href="/fichas/{{$producto->ficha_tecnica}}">Ver documento actual</a>
                     </p>
                     <p>
@@ -120,11 +120,11 @@
                     </p>
                     <p>
                         <label for="descripcion_producto">Descripción del producto</label>
-                        <textarea type="text" data-validation="length required alphanumeric" data-validation-length="3-100" class="form-control" id="descripcion_producto" name="descripcion_producto">{{$producto->descripcion}}</textarea>
+                        <textarea type="text" class="form-control" id="descripcion_producto" name="descripcion_producto">{{$producto->descripcion}}</textarea>
                     </p>
                     <p>
                         <label for="codigo_producto">codigo del producto</label>
-                        <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" value="{{$producto->codigo}}" id="codigo_producto" name="codigo_producto">
+                        <input type="text" data-validation="length required" data-validation-length="3-30" class="form-control" value="{{$producto->codigo}}" id="codigo_producto" name="codigo_producto">
                     </p>
                     <button type="submit" class="btn btn-info"><i class="fa fa-upload"></i> Registrar</button>
                 </form>

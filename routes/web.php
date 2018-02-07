@@ -77,6 +77,7 @@ Route::get('/admin/editar-tipo/{id}','TipoController@detalleTipo')->middleware('
 Route::get('/admin/editar-marca/{id}','MarcaController@detalleMarca')->middleware('auth');
 //test de mail
 Route::post('enviar-correo',function (\Illuminate\Http\Request $request,Illuminate\Mail\Mailer $mailer){
+    //$users=['paul.frankpc@hotmail.com','sergioaqs17@gmail.com'];
     $mailer->to('paul.frankpc@gmail.com')
         ->send(new \App\Mail\Consulta($request->input('email_usuario'),$request->input('nombre_usuario'),
             $request->input('apellido_usuario'),$request->input('telefono_usuario'),$request->input('consulta_usuario'),$request->input('empresa_usuario')));

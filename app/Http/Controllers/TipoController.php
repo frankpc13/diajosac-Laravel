@@ -56,6 +56,7 @@ class TipoController extends Controller
 
         $tipo->nombre=$request->input('nombre-tipo');
         $tipo->codigo=$request->input('codigo-tipo');
+        $tipo->introduccion=$request->input('intro-tipo');
         $tipo->save();
 
         return redirect('/admin/lista-tipo');

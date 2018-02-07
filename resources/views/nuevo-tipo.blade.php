@@ -93,11 +93,11 @@
                 <div class="form-control">
                     <form method="POST" enctype="multipart/form-data" action="/admin/create-type" id="marca-form">
                         <p><label for="nombre-tipo">Nombre del tipo de producto:</label>
-                            <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" name="nombre-tipo" id="nombre-tipo"></p>
+                            <input type="text" data-validation="length required" data-validation-length="3-25" class="form-control" name="nombre-tipo" id="nombre-tipo"></p>
                         <p><label for="codigo-tipo">Código del tipo de producto</label>
-                            <input type="text" data-validation="length required alphanumeric" data-validation-length="3-15" class="form-control" name="codigo-tipo" id="codigo-tipo"></p>
+                            <input type="text" data-validation="length required" data-validation-length="3-25" class="form-control" name="codigo-tipo" id="codigo-tipo"></p>
                         <p><label for="intro-tipo">Descripción</label>
-                            <textarea type="text" data-validation="length required alphanumeric" data-validation-length="5-100" class="form-control" name="intro-tipo" id="intro-tipo"></textarea></p>
+                            <textarea type="text" data-validation="length required" data-validation-length="5-100" class="form-control" name="intro-tipo" id="intro-tipo"></textarea></p>
                         <button type="submit" class="btn btn-info"><i class="fa fa-upload"></i> Registrar</button>
                     </form>
                 </div>
