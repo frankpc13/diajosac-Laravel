@@ -68,7 +68,7 @@ class ProductoController extends Controller
         //ingreso de archivo pdf
         if($request->hasFile('ficha_producto')&& $request->file('ficha_producto')->isValid()){
             $pdf=$request->file('ficha_producto');
-            $nombrepdf=$request->file('ficha_producto')->getClientOriginalName();
+            $nombrepdf="{$request->input('codigo_producto')}".".pdf";
             Storage::disk('fichas')->put($nombrepdf,File::get($pdf));
             $nuevo->ficha_tecnica=$nombrepdf;
         }
@@ -127,7 +127,7 @@ class ProductoController extends Controller
                     Storage::disk('fichas')->delete($producto->ficha_tecnica);
                 }
                 $pdf=$request->file('ficha_producto');
-                $nombrepdf=$request->file('ficha_producto')->getClientOriginalName();
+                $nombrepdf="{$request->input('codigo_producto')}".".pdf";
                 Storage::disk('fichas')->put($nombrepdf,File::get($pdf));
                 $producto->ficha_tecnica=$nombrepdf;
             }

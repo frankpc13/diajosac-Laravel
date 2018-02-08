@@ -39,8 +39,10 @@ class Kernel extends ConsoleKernel
             foreach ($users as $user){
                 $array[]=$user->correo;
             }
+                //para produccion
                 /*Mail::to('paul.frankpc@hotmail.com')->cc($array)->send(new \App\Mail\Boletin());*/
-            Mail::to('paul.frankpc@gmail.com')->send(new \App\Mail\Boletin());
+                //para pruebas
+                Mail::to('paul.frankpc@gmail.com')->send(new \App\Mail\Boletin());
             })->everyMinute();
     }
 

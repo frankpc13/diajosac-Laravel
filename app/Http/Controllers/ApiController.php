@@ -27,5 +27,6 @@ class ApiController extends Controller
             Auth::logout();
             return redirect()->intended('/');
         }
+        return redirect()->to("/");
     }
 }

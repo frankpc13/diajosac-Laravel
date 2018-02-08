@@ -78,8 +78,13 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h5 class="card-title" style="font-size: 35px">Marca: {{$producto->marca->nombre}}</h5>
-                    <p class="card-text" style="font-size: 20px">Tipo de producto: {{$producto->tipo->nombre}}<br>
-                        Descripción:<br> {{$producto->descripcion}}</p>
+                    <p class="card-text" style="font-size: 20px">
+                        Tipo de producto: {{$producto->tipo->nombre}}
+                        <br>
+                        Descripción:
+                        <br>
+                        {{$producto->descripcion}}
+                    </p>
                 </div>
             </div>
             <div class="text-center mt-2">
