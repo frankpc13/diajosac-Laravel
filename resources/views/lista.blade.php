@@ -22,7 +22,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top tema-navbar-lista" id="mainNav">
-    <a class="navbar-brand" href="index.html">DIAJO SAC</a>
+    <a class="navbar-brand" href="/">DIAJO SAC</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -68,6 +68,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 Añade mas productos a tu lista
+                <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
             </div>
             <div class="card-body">
                 <a class="btn btn-success" href="/admin/nuevo-producto"><i class="fa fa-plus"></i> Crear Producto</a>
@@ -133,7 +134,7 @@
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © DIAJO SAC 2018</small>
+                <small>DIAJO SAC {{date('Y')}}</small>
             </div>
         </div>
     </footer>

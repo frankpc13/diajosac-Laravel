@@ -68,6 +68,7 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
+                    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
                     <strong>Nuestros mejores productos <br>a su alcance</strong>
                 </h1>
             </div>
@@ -83,10 +84,6 @@
                 @foreach($tipo as $tipos)
                     <a class="list-group-item" href="{{url("/productos/$tipos->id")}}">{{$tipos->nombre}}</a>
             @endforeach
-            <!--<a class="list-group-item" href="#">Chalecos</a>
-                <a class="list-group-item" href="#">Chalecos</a>
-                <a class="list-group-item" href="#">Chalecos</a>
-                <a class="list-group-item" href="#">Chalecos</a>-->
             </div>
         </div>
         <div class="col-lg-9">
@@ -115,7 +112,7 @@
         </div>
     </div>
 </div>
-<footer class="text-center">DIAJO S.A.C. 2018</footer>
+<footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/jquery/jquery.min.js"></script>
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>

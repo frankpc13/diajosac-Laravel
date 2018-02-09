@@ -60,7 +60,7 @@
 <table style="font-family: 'Roboto Mono Medium',sans-serif; background-color: #0b0b0b; border: 1px solid #e9e9e9; width: 600px;">
     <tbody>
     <tr style="text-align: center; color: white; font-size:smaller">
-        <td>DIAJO SAC © {{date('Y')}}</td>
+        <td>DIAJO SAC {{date('Y')}}</td>
     </tr>
     <tr style="text-align: center; color: white; font-size:smaller">
         <td>Este correo se envió el {{date('d-m-Y')}} a las {{date('H:i:s')}}</td>

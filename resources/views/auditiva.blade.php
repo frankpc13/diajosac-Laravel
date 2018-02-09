@@ -30,7 +30,6 @@
     <script src="/vendors/jquery/jquery-ui.js"></script>
 </head>
 <body>
-
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -70,7 +69,9 @@
         </div>
     </div>
 </nav>
+
 <header class="container-fluid  text-white text-center productos">
+    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
     <h1 class="text-uppercase">Normativa sobre la protección auditiva</h1></header>
 <div class="container-fluid p-5">
     <div class="form-control">
@@ -94,7 +95,7 @@
 </div>
 </div>
 
-<footer class="text-center">DIAJO SAC 2018</footer>
+<footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>

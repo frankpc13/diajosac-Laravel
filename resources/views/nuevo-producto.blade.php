@@ -35,7 +35,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top tema-navbar-lista" id="mainNav">
-    <a class="navbar-brand" href="index.html">DIAJO SAC</a>
+    <a class="navbar-brand" href="/">DIAJO SAC</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -83,6 +83,7 @@
             <div class="col-lg-10 mx-auto">
                 <h4 class="text-uppercase">
                     <strong style="color: teal;">Ingrese su nuevo producto</strong>
+                    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
                 </h4>
             </div>
         </div>
@@ -142,7 +143,7 @@
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
-            <small>Copyright © DIAJO SAC 2018</small>
+            <small>DIAJO S.A.C. {{date('Y')}}</small>
         </div>
     </div>
 </footer>

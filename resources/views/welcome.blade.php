@@ -77,10 +77,11 @@
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
                     <strong>Bienvenidos a DIAJO SAC</strong>
+                    <hr class="light">
                 </h1>
-                <br>
+                <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
                 <br><br>
-                <hr class="light">
+
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-info mb-5"><strong style="color: white; font-size: 25px">Somos una empresa distribuidora de equipos de protección
@@ -99,6 +100,8 @@
                 <hr class="light my-4">
                 <p class="text-faded mb-4 text-section">Brindar soluciones productivas y efectivas a las diferentes dificultades que se presentan
                     en el campo laboral</p>
+                <br>
+                <a class="btn btn-light" href="/nosotros">Más acerca de nosotros</a>
                 <!--<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>-->
             </div>
         </div>
@@ -324,7 +327,7 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHhus-j6mf3am0lWAkkKWzs9UXA5K_cUs&callback=myMap"></script>
 
-<footer class="text-center">DIAJO S.A.C. 2018</footer>
+<footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
 <script>
 
     var myLanguage = {

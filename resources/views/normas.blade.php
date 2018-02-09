@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio  ">
 
-    <title>DIAJO SAC</title>
+    <title>Normas - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,6 +71,7 @@
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
                     <strong>Normativas sobre Equipos de Protección Personal</strong>
+                    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
                 </h1>
             </div>
         </div>
@@ -165,7 +166,7 @@
         </div>
     </div>
 </div>
-<footer class="text-center">DIAJO S.A.C. 2018</footer>
+<footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/jquery/jquery.min.js"></script>

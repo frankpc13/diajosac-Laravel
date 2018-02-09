@@ -73,6 +73,7 @@
 <header class="container-fluid  text-white text-center productos">
     <br>
     <h1 class="text-uppercase">Normativa sobre la protección visual</h1>
+    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
 
 </header>
 <div class="container-fluid p-5">
@@ -97,7 +98,7 @@
     </div>
 </div>
 
-<footer class="text-center">DIAJO SAC 2018</footer>
+<footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>

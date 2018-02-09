@@ -68,6 +68,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     Añade nuevas marcas a tu lista
+                    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
                 </div>
                 <div class="card-body">
                     <a class="btn btn-success" href="/admin/nueva-marca"><i class="fa fa-plus"></i> Añadir marca</a>
@@ -121,7 +122,7 @@
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © DIAJO SAC 2018</small>
+                <small>DIAJO S.A.C. {{date('Y')}}</small>
             </div>
         </div>
     </footer>

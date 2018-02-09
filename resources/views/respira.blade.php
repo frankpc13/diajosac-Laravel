@@ -70,7 +70,11 @@
         </div>
     </div>
 </nav>
-<header class="container-fluid  text-white text-center productos"><h1 class="text-uppercase">Normativa sobre la protección respiratoria</h1></header>
+<header class="container-fluid  text-white text-center productos">
+    <h1 class="text-uppercase">Normativa sobre la protección respiratoria
+        <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
+    </h1>
+</header>
 <div class="container-fluid p-5">
     <div class="form-control">
     <p><h3>29 CFR 1910.134</h3>
@@ -127,7 +131,7 @@
 </div>
 </div>
 
-<footer class="text-center">DIAJO SAC 2018</footer>
+<footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>

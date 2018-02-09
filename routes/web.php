@@ -37,6 +37,9 @@ Route::get('/normas/guantes_proteccion',function (){
 Route::get('/normas/trajes_proteccion',function (){
     return view('traje');
 });
+Route::get('/nosotros',function (){
+    return view('nosotros');
+});
 //admin mode
 Route::get('/admin/nueva-marca',function (){
   return view('nueva-marca');
@@ -44,6 +47,7 @@ Route::get('/admin/nueva-marca',function (){
 Route::get('/admin/nuevo-tipo',function (){
    return view('nuevo-tipo');
 })->middleware('auth');
+
 
 Route::get('/admin/nuevo-producto','ProductoController@crearProducto')->middleware('auth');
 Route::get('/admin/lista','ProductoController@listaProducto')->middleware('auth');

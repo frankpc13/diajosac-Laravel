@@ -25,6 +25,8 @@
 
 </head>
 
+<body>
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -64,8 +66,8 @@
         </div>
     </div>
 </nav>
-<body>
 <header class="container-fluid  text-white text-center detalle-producto">
+    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
     <h2 class="text-uppercase" style="font-size: 50px">{{$producto->nombre}}</h2>
 </header>
 <div class="container-fluid mt-4 mb-4 contenedor-detalle">
@@ -94,7 +96,7 @@
     </div>
 </div>
 <footer class="text-center">
-    DIAJO SAC 2018
+    DIAJO S.A.C. {{date('Y')}}
 </footer>
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/jquery/jquery.min.js"></script>

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio  ">
 
-    <title>Marcas - DIAJO SAC</title>
+    <title>Inicio de sesión - DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,7 @@
 <body>
 <header class="text-center login-bg">
     <h3 class="text-uppercase">Administración</h3>
+    <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
 </header>
 <section>
     <div class="container login-d">
@@ -66,7 +67,7 @@
 </section>
 <footer class="sticky-footer">
     <div class="container">
-        <div class="text-center">DIAJO SAC 2018</div>
+        <div class="text-center">DIAJO S.A.C. {{date('Y')}}</div>
     </div>
 </footer>
 

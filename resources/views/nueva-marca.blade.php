@@ -33,14 +33,14 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top tema-navbar-lista" id="mainNav">
-    <a class="navbar-brand" href="index.html">DIAJO SAC</a>
+    <a class="navbar-brand" href="/">DIAJO SAC</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis productoss">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/admin/lista">
                     <i class="fa fa-fw fa-table"></i>
                     <span class="nav-link-text">Mis productos</span>
                 </a>
@@ -52,7 +52,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mis tipos de productos">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/admin/lista-tipo">
                     <i class="fa fa-fw fa-archive"></i>
                     <span class="nav-link-text">Mis tipos de productos</span>
                 </a>
@@ -81,6 +81,7 @@
                 <div class="col-lg-10 mx-auto">
                     <h3 class="text-uppercase">
                         <strong style="color: #1f648b;">Registre una nueva marca</strong>
+                        <label style="color: transparent">{{date_default_timezone_set("America/Lima")}}</label>
                     </h3>
                 </div>
             </div>
@@ -109,7 +110,7 @@
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
-            <small>Copyright © DIAJO SAC 2018</small>
+            <small>DIAJO S.A.C. {{date('Y')}}</small>
         </div>
     </div>
 </footer>
