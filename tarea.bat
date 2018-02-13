@@ -1,0 +1,1 @@
+php php C:/wamp64/www/diajosac/artisan schedule:run

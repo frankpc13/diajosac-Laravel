@@ -2,11 +2,11 @@
 
 namespace App\Console;
 
-use App\Mail\Boletin;
 use App\Models\Destinatario;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\Boletin as Boletin;
 
 class Kernel extends ConsoleKernel
 {
@@ -27,23 +27,22 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
         $schedule->call(function (){
             $users=Destinatario::all();
 
             //insertar usuarios de base de datos para poder el boletin cada mes//
-            //$users=['paul.frankpc@gmail.com','sergioaqs17@gmail.com','anthonylf797@gmail.com'];
             //funcion para enviar el correo
             //me envia el correo dependiendo de las personas
             foreach ($users as $user){
                 $array[]=$user->correo;
             }
                 //para produccion
-                /*Mail::to('paul.frankpc@hotmail.com')->cc($array)->send(new \App\Mail\Boletin());*/
-                //para pruebas
-                Mail::to('paul.frankpc@gmail.com')->send(new \App\Mail\Boletin());
-            })->everyMinute();
+                //ya se puede enviar el boletin a todos los usuarios registrados en la base de datos de la empresa
+                //falta crear una url en la cual se pueda quitar el registro para eliminar al usuario de la base de datos
+                Mail::to('paul.frankpc@hotmail.com')->cc($array)->send(new \App\Mail\Boletin());
+                //para pruebas (ya se puede usar el correo de diajo sac para poder realizar los envios de boletin)
+                //Mail::to('paul.frankpc@gmail.com')->send(new Boletin());
+            })->monthly();
     }
 
     /**
