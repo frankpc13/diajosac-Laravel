@@ -72,7 +72,7 @@
 </header>
 <div class="container-fluid mt-4 mb-4 contenedor-detalle">
     <div class="row">
-        <div class="col-lg-3 ml-5 text-center">
+        <div class="col-lg-3 text-center">
             <img class="image-border" src="/images/{{$producto->imagen}}" width="250" height="250">
 
         </div>
@@ -109,5 +109,6 @@
 
 <!-- Custom scripts for this template -->
 <script src="/js/creative.js"></script>
+
 </body>
 </html>

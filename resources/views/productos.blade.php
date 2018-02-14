@@ -110,7 +110,6 @@
             <div class="row extended">
                 @foreach($producto as $productos)
                     <div class="col-md-3 mb-3">
-
                         <div class="card bg-light card-d">
                             <a href="/productos/detalle/{{$productos->codigo}}" class="marca-title">
                             <img class="card-img-top resize-card" src="/images/{{$productos->imagen}}">
@@ -119,13 +118,18 @@
                                 <p>{{$productos->marca->nombre}}</p>
                                 <div class="card-text"></div>
                             </div>
+                            </a>
                         </div>
-                        </a>
+
                     </div>
 
                     @if($loop->last)
-                        <div class="col-lg-9 ml-2 mt-4">
-                        {{$producto->render("pagination::bootstrap-4")}}
+                        <div class="col-lg-9 mt-4">
+                            <nav>
+                                <ul class="pagination pagination flex-wrap">
+                            {{$producto->render("pagination::bootstrap-4")}}
+                                </ul>
+                            </nav>
                         </div>
                     @endif
                 @endforeach
@@ -150,5 +154,12 @@
 
 <!-- Custom scripts for this template -->
 <script src="/js/creative.js"></script>
+
+<script src="/js/responsive-paginate.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".pagination").rPage();
+    });
+</script>
 </body>
 </html>
