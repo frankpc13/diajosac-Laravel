@@ -48,7 +48,7 @@
                 </li>
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#" >
+                    <a style="border: 2px solid teal;" class="nav-link dropdown-toggle rounded" data-toggle="dropdown" id="navbardrop" href="#" >
                         Catálogo
                     </a>
                     <div class="dropdown-menu">
@@ -58,9 +58,13 @@
                     </div>
                 </li>
                 @if(\Illuminate\Support\Facades\Auth::check())
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{url("/admin/lista")}}">Continuar sesión</a>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="droplog" href="#">Opciones</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/admin/logout">Cerrar Sesión Actual</a>
+                            <a class="dropdown-item" href="/admin/lista">Continuar sesión</a>
+                        </div>
+                    </li>
                 @else
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{url("/admin/login")}}">Iniciar sesión</a>
@@ -253,7 +257,7 @@
 <script src="/js/creative.js"></script>
 <script src="/js/mapsDIAJO.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<div class="bg-primary container-fluid">
+<div class="bg-primary container-fluid pt-4 pb-4">
 <h3 class="text-center mt-4 text-white"> Nuestra ubicación</h3>
 <div id="googleMap" style="width:100%;height: 450px;"></div>
 </div>
