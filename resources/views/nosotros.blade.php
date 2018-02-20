@@ -26,23 +26,20 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DIAJO SAC</a>
+        <a class="navbar-brand js-scroll-trigger" href="/#page-top">DIAJO SAC</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">Nosotros</a>
+                    <a class="nav-link js-scroll-trigger" href="/#about">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
+                    <a class="nav-link js-scroll-trigger" href="/#services">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portafolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Contáctenos</a>
+                    <a class="nav-link js-scroll-trigger" href="/#contact">Contáctenos</a>
                 </li>
                 <!--<li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#contact">Catálogo</a>
@@ -110,7 +107,7 @@
 <section style="background-color: #1c7430; color: white;">
     <div class="container">
         <div class="row">
-            <div class="col-lg">
+            <div class="col-lg mx-auto">
             <div class="text-center">
                 <h3>Nuestros valores:</h3>
                 <div style="text-align: center;">
@@ -141,8 +138,6 @@
 <script src="/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
 <!-- Custom scripts for this template -->
 <script src="/js/creative.js"></script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHhus-j6mf3am0lWAkkKWzs9UXA5K_cUs&callback=myMap"></script>
 
 <footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
 </body>

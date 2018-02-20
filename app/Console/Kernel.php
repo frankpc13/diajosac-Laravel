@@ -34,15 +34,9 @@ class Kernel extends ConsoleKernel
             //funcion para enviar el correo
             //me envia el correo dependiendo de las personas
             foreach ($users as $user){
-                $array[]=$user->correo;
+                Mail::to($user->correo)->send(new \App\Mail\Boletin());
             }
-                //para produccion
-                //ya se puede enviar el boletin a todos los usuarios registrados en la base de datos de la empresa
-                //falta crear una url en la cual se pueda quitar el registro para eliminar al usuario de la base de datos
-                Mail::to('paul.frankpc@hotmail.com')->cc($array)->send(new \App\Mail\Boletin());
-                //para pruebas (ya se puede usar el correo de diajo sac para poder realizar los envios de boletin)
-                //Mail::to('paul.frankpc@gmail.com')->send(new Boletin());
-            })->monthly();
+        })->monthlyOn(15,'15:35');
     }
 
     /**

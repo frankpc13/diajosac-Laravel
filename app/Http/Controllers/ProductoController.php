@@ -75,7 +75,8 @@ class ProductoController extends Controller
 
         if ($request->hasFile('imagen_producto') && $request->file('imagen_producto')->isValid()) {
             $imagen = $request->file('imagen_producto');
-            $filename = $request->file('imagen_producto')->getClientOriginalName();
+            //$filename = $request->file('imagen_producto')->getClientOriginalName();
+            $filename="{$request->input('codigo_producto')}".".jpg";
             $imagen_resize=Image::make($imagen->getRealPath());
             $imagen_resize->resize(500,500);
 
@@ -136,7 +137,8 @@ class ProductoController extends Controller
                     Storage::disk('images')->delete($producto->imagen);
                 }
                 $imagen = $request->file('imagen_producto');
-                $filename = $request->file('imagen_producto')->getClientOriginalName();
+                /*$filename = $request->file('imagen_producto')->getClientOriginalName();*/
+                $filename="{$request->input('codigo_producto')}".".jpg";
                 $imagen_resize=Image::make($imagen->getRealPath());
                 $imagen_resize->resize(500,500);
 

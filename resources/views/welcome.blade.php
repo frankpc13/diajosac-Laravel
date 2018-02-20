@@ -44,14 +44,8 @@
                     <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portafolio</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contáctenos</a>
                 </li>
-                <!--<li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#contact">Catálogo</a>
-                </li>-->
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#" >
@@ -63,9 +57,15 @@
                         <a class="dropdown-item" href="{{url("/normas")}}">Normativas sobre EEP</a>
                     </div>
                 </li>
+                @if(\Illuminate\Support\Facades\Auth::check())
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{url("/admin/login")}}">Iniciar Sesión</a>
+                    <a class="nav-link js-scroll-trigger" href="{{url("/admin/lista")}}">Continuar sesión</a>
                 </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{url("/admin/login")}}">Iniciar sesión</a>
+                    </li>
+                    @endif
             </ul>
         </div>
     </div>
@@ -151,102 +151,6 @@
     </div>
 </section>
 
-<section class="p-0" id="portfolio">
-    <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="/img/portfolio/fullsize/1.jpg">
-                    <img class="img-fluid" src="/img/portfolio/thumbnails/1.jpg" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Medición de Ruido
-                            </div>
-                            <div class="project-name">
-                                Contaminación Sonora en Lima
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="/img/portfolio/fullsize/2.jpg">
-                    <img class="img-fluid" src="/img/portfolio/thumbnails/2.jpg" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Capacitación
-                            </div>
-                            <div class="project-name">
-                                Enseñando los diferentes tipos de EPP
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="/img/portfolio/fullsize/3.jpg">
-                    <img class="img-fluid" src="/img/portfolio/thumbnails/3.jpg" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Distribución de Equipos
-                            </div>
-                            <div class="project-name">
-                                Para todo tipo de trabajo
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="/img/portfolio/fullsize/4.jpg">
-                    <img class="img-fluid" src="/img/portfolio/thumbnails/4.jpg" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Equipos de calidad
-                            </div>
-                            <div class="project-name">
-                                Tu seguridad ante todo
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="/img/portfolio/fullsize/5.jpg">
-                    <img class="img-fluid" src="/img/portfolio/thumbnails/5.jpg" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Capacitación
-                            </div>
-                            <div class="project-name">
-                                Protección necesaría para los constructores civiles
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="/img/portfolio/fullsize/6.jpg">
-                    <img class="img-fluid" src="/img/portfolio/thumbnails/6.jpg" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Normas Legales
-                            </div>
-                            <div class="project-name">
-
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="bg-primary" style="color: white" id="contact">
     <div class="container">
         <h2 class="section-heading text-center">Contáctenos</h2>
@@ -281,9 +185,14 @@
                     R.U.C: 20492055116 </p>
             </div>
         </div>
+    </div>
+</section>
+<section>
+    <div class="container">
     <div class="row">
-            <div class="col-lg-4">
-                <h3>Realiza tu consulta:</h3>
+            <div class="col-lg-6 mx-auto">
+                <h3 class="text-center">Realiza tu consulta:</h3>
+                <br>
             <div class="form-control">
                 <form id="emailer_form" action="enviar-correo" method="post">
                 <p><label for="nombre_usuario">Nombre:</label>
@@ -303,13 +212,34 @@
                 <label for="consulta_usuario">Consulta:</label>
                 <p><textarea name="consulta_usuario" data-validation="required length" data-validation-length="min20 max100" id="consulta_usuario" type="text" class="form-control"></textarea>
                 </p>
-                <button type="submit" class="btn btn-info"><i class="fa fa-send"></i> Enviar</button>
+                <button id="submit_consulta" type="submit" class="btn btn-info"><i class="fa fa-send"></i> Enviar</button>
                 </form>
             </div>
         </div>
         </div>
     </div>
 </section>
+<!--modal de mrd-->
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            {{--<div class="modal-header">
+--}}{{--
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+--}}{{--
+            </div>--}}
+            <div class="modal-body">
+                Gracias por su consulta
+            </div>
+            {{--<div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>--}}
+        </div>
+    </div>
+</div>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="/vendors/jquery/jquery.min.js"></script>
@@ -323,11 +253,14 @@
 <script src="/js/creative.js"></script>
 <script src="/js/mapsDIAJO.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<div id="googleMap" style="width:100%;height: 400px;"></div>
-
+<div class="bg-primary container-fluid">
+<h3 class="text-center mt-4 text-white"> Nuestra ubicación</h3>
+<div id="googleMap" style="width:100%;height: 450px;"></div>
+</div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHhus-j6mf3am0lWAkkKWzs9UXA5K_cUs&callback=myMap"></script>
 
 <footer class="text-center">DIAJO S.A.C. {{date('Y')}}</footer>
+
 <script>
 
     var myLanguage = {
@@ -380,6 +313,20 @@
 
     // Restrict presentation length
     $('#presentation').restrictLength( $('#pres-max-length') );
+
+    var form=$('#emailer_form').validate();
+    $("#submit_consulta").on('click',function () {
+    if(form.valid()===false){
+        $("#exampleModalCenter").modal('show');
+    }
+    })
+
+    /*on('click',function () {
+        errors=[];
+        if($(this).isValid(lang,conf,false)){
+        $("#exampleModalCenter").modal('show');
+        }*/
+
 
 </script>
 </body>

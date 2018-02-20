@@ -14,7 +14,8 @@ class ApiController extends Controller
 
             return redirect()->intended('/admin/lista');
         }
-        echo "<h4>La contraseña o usuario es incorrecto</h4>";
+        $error="La contraseña o usuario es incorrecto";
+        return view('login')->with('error',$error);
     }
 
     protected function guard(){

@@ -120,14 +120,14 @@
             </tr>
             </tbody>
             <tbody>
-            <tr>
+            {{--<tr>
                 <td style="font-size: x-small">
                     <center>
                         <p>Este mensaje te llego por estar registrado en la base de datos de DIAJO SAC</p>
                         <p>Si quieres desafiliarte dale click <a href="laweasalir">aquí</a></p>
                     </center>
                 </td>
-            </tr>
+            </tr>--}}
             </tbody>
         </table>
     </center>

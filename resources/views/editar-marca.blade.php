@@ -99,7 +99,7 @@
                         <p><label for="codigo-marca">Código de la marca</label>
                             <input type="text" data-validation="" data-validation-length="3-20" class="form-control" value="{{$marca->codigo}}" name="codigo-marca" id="codigo-marca"></p>
                         <p><label for="intro-marca">Descripción</label>
-                            <textarea type="text" data-validation="" class="form-control" value="{{$marca->introduccion}}" name="intro-marca" id="intro-marca"></textarea></p>
+                            <textarea type="text" data-validation="" class="form-control" name="intro-marca" id="intro-marca">{{$marca->introduccion}}</textarea></p>
                         <p><label for="imagen-marca">Imagen:</label>
                             <input class="form-control" data-validation="" name="imagen-marca" id="imagen-marca" type="file" accept="image/*"></p>
                         <img class="img-thumbnail" width="150" height="150" src="/img/marcas/{{$marca->imagen}}"><br><br>

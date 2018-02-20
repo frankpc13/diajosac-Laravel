@@ -29,7 +29,8 @@ class MarcaController extends Controller
         $nuevo->introduccion=$request->input('intro-marca');
         if($request->hasFile('imagen-marca')&&$request->file('imagen-marca')->isValid()){
             $imagen=$request->file('imagen-marca');
-            $filename=$request->file('imagen-marca')->getClientOriginalName();
+            //$filename=$request->file('imagen-marca')->getClientOriginalName();
+            $filename="{$request->input('codigo-marca')}".".jpg";
             $imagen_resize=Image::make($imagen->getRealPath());
             $imagen_resize->resize(500,500);
             $imagen_resize->save(public_path('img/marcas/'.$filename));
@@ -54,7 +55,8 @@ class MarcaController extends Controller
                 Storage::disk('marcas')->delete($marca->imagen);
             }
             $imagen=$request->file('imagen-marca');
-            $filename=$request->file('imagen-marca')->getClientOriginalName();
+            //$filename=$request->file('imagen-marca')->getClientOriginalName();
+            $filename="{$request->input('codigo-marca')}".".jpg";
             $imagen_resize=Image::make($imagen->getRealPath());
             $imagen_resize->resize(500,500);
 

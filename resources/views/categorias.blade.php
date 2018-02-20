@@ -40,9 +40,6 @@
                     <a class="nav-link js-scroll-trigger" href="{{url("/#services")}}">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{url("/#portfolio")}}">Portafolio</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{url("/#contact")}}">Contáctenos</a>
                 </li>
                 <!--<li class="nav-item">

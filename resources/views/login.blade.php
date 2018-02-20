@@ -52,6 +52,9 @@
                     <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
                 </div>
             </form>
+            @if(!is_null($error))
+                <h5 style="color: red; font-size: smaller">{{$error}}</h5>
+            @endif
         </div>
         <div class="col-md-3 help-box m-4">
             <h4>Recueda que con tu cuenta puedes:</h4>
@@ -63,7 +66,7 @@
             </ul>
         </div>
     </div>
-
+    </div>
 </section>
 <footer class="sticky-footer">
     <div class="container">
