@@ -83,7 +83,7 @@ Route::get('/admin/editar-tipo/{id}','TipoController@detalleTipo')->middleware('
 Route::get('/admin/editar-marca/{id}','MarcaController@detalleMarca')->middleware('auth');
 //test de mail
 Route::post('enviar-correo',function (\Illuminate\Http\Request $request,Illuminate\Mail\Mailer $mailer){
-    $mailer->to('gerencia@diajosac.com')
+    $mailer->to('YOUR_EMAIL_ADRESS')
         ->send(new \App\Mail\Consulta($request->input('email_usuario'),$request->input('nombre_usuario'),
             $request->input('apellido_usuario'),$request->input('telefono_usuario'),$request->input('consulta_usuario'),$request->input('empresa_usuario')));
     return redirect()->back();
