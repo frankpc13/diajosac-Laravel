@@ -1,14 +1,16 @@
-# Laravel PHP Framework
+# DIAJO SAC Website + Laravel PHP Framework 5.3
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This is the new website of DIAJO SAC implementing a new and responsive design with Bootstrap v.4.0 and Laravel 5.3. the database used is MySQL. The Web is implemented in GoDaddy Shared WebHosting.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Principal Functions
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+* Presentation of the business
+* list of products
+* list of brands
+* Search fuction for products
+* detail of a product
+* email form for contact us
+* monthly mailer with the design of a flyer
 
 ## Official Documentation
 
