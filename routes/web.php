@@ -40,6 +40,9 @@ Route::get('/normas/trajes_proteccion',function (){
 Route::get('/nosotros',function (){
     return view('nosotros');
 });
+Route::get('/sitemap.xml',function (){
+   return view('sitemap');
+});
 //admin mode
 Route::get('/admin/nueva-marca',function (){
   return view('nueva-marca');
@@ -47,7 +50,6 @@ Route::get('/admin/nueva-marca',function (){
 Route::get('/admin/nuevo-tipo',function (){
    return view('nuevo-tipo');
 })->middleware('auth');
-
 
 Route::get('/admin/nuevo-producto','ProductoController@crearProducto')->middleware('auth');
 Route::get('/admin/lista','ProductoController@listaProducto')->middleware('auth');
@@ -69,7 +71,7 @@ Route::post('/productos/buscar/{nombre}','ProductoController@buscarProducto');
 Route::post('/admin/sesion','ApiController@login');
 Route::post('/admin/editar/{id}','ProductoController@actualizarProducto')->middleware('auth');
 Route::post('/admin/create','ProductoController@nuevoProducto')->middleware('auth');
-Route::post('/admin/create-brand','Marcacontroller@nuevaMarca')->middleware('auth');
+Route::post('/admin/create-brand','MarcaController@nuevaMarca')->middleware('auth');
 Route::post('/admin/create-type','TipoController@nuevoTipo')->middleware('auth');
 Route::get('/admin/borrar-producto/{id}','ProductoController@borrarProducto')->middleware('auth');
 Route::get('/admin/borrar-marca/{id}','MarcaController@borrarMarca')->middleware('auth');
@@ -81,8 +83,11 @@ Route::get('/admin/editar-tipo/{id}','TipoController@detalleTipo')->middleware('
 Route::get('/admin/editar-marca/{id}','MarcaController@detalleMarca')->middleware('auth');
 //test de mail
 Route::post('enviar-correo',function (\Illuminate\Http\Request $request,Illuminate\Mail\Mailer $mailer){
-    $mailer->to('paul.frankpc@gmail.com')
+    $mailer->to('gerencia@diajosac.com')
         ->send(new \App\Mail\Consulta($request->input('email_usuario'),$request->input('nombre_usuario'),
             $request->input('apellido_usuario'),$request->input('telefono_usuario'),$request->input('consulta_usuario'),$request->input('empresa_usuario')));
+    return redirect()->back();
+});
+Route::get('/productos/buscar',function(){
     return redirect()->back();
 });

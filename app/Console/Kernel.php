@@ -36,7 +36,7 @@ class Kernel extends ConsoleKernel
             foreach ($users as $user){
                 Mail::to($user->correo)->send(new \App\Mail\Boletin());
             }
-        })->monthlyOn(15,'15:35');
+        })->monthlyOn(21,'15:35');
     }
 
     /**

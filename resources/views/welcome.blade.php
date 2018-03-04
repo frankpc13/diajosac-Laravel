@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Paul Frank Pacheco Carpio">
-
+    <meta name="google-site-verification" content="UDpvNrC6ovKTgsoyonLSWoGHd3q9obBx8XBfKi6Av3U" />
     <title>DIAJO SAC</title>
 
     <!-- Bootstrap core CSS -->
