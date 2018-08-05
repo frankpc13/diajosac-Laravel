@@ -7,7 +7,7 @@ This is the new website of DIAJO SAC implementing a new and responsive design wi
 * Presentation of the business
 * list of products
 * list of brands
-* Search fuction for products
+* Search function for products
 * detail of a product
 * email form for contact us
 * monthly mailer with the design of a flyer
