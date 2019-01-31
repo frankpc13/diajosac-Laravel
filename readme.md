@@ -2,7 +2,7 @@
 
 This is the new website of DIAJO SAC implementing a new and responsive design with Bootstrap v.4.0 and Laravel 5.3. the database used is MySQL. The Web is implemented in GoDaddy Shared WebHosting.
 
-## Principal Functions
+## Core functionality
 
 * Presentation of the business
 * list of products
